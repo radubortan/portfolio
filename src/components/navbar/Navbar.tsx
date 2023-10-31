@@ -14,14 +14,14 @@ const Navbar = () => {
         >
           Radu Bortan
         </motion.span>
-        <div className={classes.links}>
-          <a href="https://www.linkedin.com/in/radu-bortan/" target="_blank">
-            <img src="/linkedin.svg" alt="LinkedIn logo"></img>
-          </a>
-          <a href="https://github.com/radubortan" target="_blank">
-            <img src="/github.svg" alt="GitHub logo"></img>
-          </a>
-        </div>
+        <motion.a
+          whileHover={{ scale: 1.2 }}
+          transition={{ duration: 0.2, type: "spring", stiffness: 300 }}
+          href="https://www.linkedin.com/in/radu-bortan/"
+          target="_blank"
+        >
+          <img src="/linkedin.svg" alt="LinkedIn logo"></img>
+        </motion.a>
       </div>
     </div>
   );

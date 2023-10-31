@@ -16,19 +16,9 @@
       font-size: 20px;
     }
 
-    .links {
-      display: flex;
-      gap: 10px;
-      background-color: white;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      border-radius: 10px;
-
-      img {
-        display: block;
-        width: 25px;
-      }
+    img {
+      display: block;
+      width: 25px;
     }
   }
 }
