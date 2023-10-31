@@ -1,5 +1,14 @@
+import "./app.scss";
+
 function App() {
-  return <div></div>
+  return (
+    <div>
+      <section>
+        <a href="">Hello</a>
+      </section>
+      <section>Parallax</section>
+    </div>
+  );
 }
 
-export default App
+export default App;
