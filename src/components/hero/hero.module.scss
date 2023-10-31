@@ -1,0 +1,61 @@
+.container {
+  height: calc(100vh - 100px);
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  position: relative;
+  overflow: hidden;
+
+  .textWrapper {
+    position: relative;
+    z-index: 2;
+    padding: 0 37.5px;
+    max-width: 1366px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+
+    h2 {
+      font-size: 30px;
+      color: #663399;
+      letter-spacing: 10px;
+      user-select: none;
+    }
+
+    h1 {
+      font-size: 88px;
+      user-select: none;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+
+      button {
+        padding: 20px;
+        border: 1px solid white;
+        border-radius: 10px;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
+
+    img {
+      width: 50px;
+    }
+  }
+
+  .slidingTextContainer {
+    position: absolute;
+    font-size: 50vh;
+    bottom: -120px;
+    white-space: nowrap;
+    color: #ffffff09;
+    font-weight: bold;
+    z-index: 0;
+    user-select: none;
+  }
+}

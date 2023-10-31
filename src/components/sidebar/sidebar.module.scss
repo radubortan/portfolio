@@ -1,10 +1,12 @@
 .sidebar {
+  z-index: 99;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: white;
   color: black;
+  position: relative;
 
   .background {
     position: fixed;
