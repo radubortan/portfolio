@@ -1,0 +1,21 @@
+.modal {
+  width: clamp(50%, 700px, 90%);
+  height: min(50%, 200px);
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: white;
+
+  button {
+    background-color: transparent;
+    border: none;
+
+    .icon {
+      color: gray;
+    }
+  }
+}
