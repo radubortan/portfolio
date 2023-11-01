@@ -31,6 +31,36 @@ const Projects = () => {
         )}
       </AnimatePresence> */}
 
+      <AnimatePresence initial={false} mode="wait">
+        {isModalOpen && (
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              height: "100%",
+              width: "100%",
+              backgroundColor: "#00000055",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            onClick={() => setIsModalOpen((prev) => !prev)}
+          >
+            <motion.div
+              layoutId={currentId}
+              style={{
+                width: "50vw",
+                height: "400px",
+                backgroundColor: "white",
+                borderRadius: "20px",
+                userSelect: "none",
+              }}
+            ></motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       <div className={classes.textContainer}>
         <motion.p variants={variants.smallTextVariants}>
           I have worked on <br />
@@ -72,35 +102,6 @@ const Projects = () => {
         </div>
       </motion.div>
 
-      <AnimatePresence initial={false} mode="wait">
-        {isModalOpen && (
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              height: "100%",
-              width: "100%",
-              backgroundColor: "#00000055",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            onClick={() => setIsModalOpen((prev) => !prev)}
-          >
-            <motion.div
-              layoutId={currentId}
-              style={{
-                width: "50vw",
-                height: "400px",
-                backgroundColor: "white",
-                borderRadius: "20px",
-              }}
-            ></motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
       <motion.div
         className={classes.listContainer}
         variants={variants.textVariants}
@@ -133,3 +134,9 @@ const Projects = () => {
 };
 
 export default Projects;
+
+/*  
+- add hover effect
+- create backdrop component
+- create modal
+*/
