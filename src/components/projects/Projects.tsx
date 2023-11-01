@@ -1,10 +1,16 @@
 import classes from "./projects.module.scss";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import * as variants from "./projects.variants";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import ProjectModal from "./ProjectModal";
+import { projects } from "./projects.data";
 
 const Projects = () => {
   const ref = useRef<HTMLDivElement>(null);
+
+  const [currentId, setCurrentId] = useState<string>("");
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const isInView = useInView(ref, { margin: "-100px" });
 
@@ -16,6 +22,15 @@ const Projects = () => {
       animate={isInView && "animate"}
       ref={ref}
     >
+      {/* <AnimatePresence initial={false} mode="wait">
+        {isModalOpen && (
+          // <ProjectModal
+          //   project="temp"
+          //   handleClose={() => setIsModalOpen((prev) => !prev)}
+          // />
+        )}
+      </AnimatePresence> */}
+
       <div className={classes.textContainer}>
         <motion.p variants={variants.smallTextVariants}>
           I have worked on <br />
@@ -57,70 +72,61 @@ const Projects = () => {
         </div>
       </motion.div>
 
+      <AnimatePresence initial={false} mode="wait">
+        {isModalOpen && (
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              height: "100%",
+              width: "100%",
+              backgroundColor: "#00000055",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            onClick={() => setIsModalOpen((prev) => !prev)}
+          >
+            <motion.div
+              layoutId={currentId}
+              style={{
+                width: "50vw",
+                height: "400px",
+                backgroundColor: "white",
+                borderRadius: "20px",
+              }}
+            ></motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       <motion.div
         className={classes.listContainer}
         variants={variants.textVariants}
       >
-        <motion.div
-          className={classes.box}
-          whileHover={{
-            backgroundColor: "#d3d3d3",
-            color: "#000000",
-          }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            sed nam, illum minus, veritatis a quod soluta quasi autem nostrum
-            consectetur voluptas reprehenderit earum quo amet. Ea exercitationem
-            reiciendis minus?
-          </p>
-        </motion.div>
-        <motion.div
-          className={classes.box}
-          whileHover={{
-            backgroundColor: "#d3d3d3",
-            color: "#000000",
-          }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            sed nam, illum minus, veritatis a quod soluta quasi autem nostrum
-            consectetur voluptas reprehenderit earum quo amet. Ea exercitationem
-            reiciendis minus?
-          </p>
-        </motion.div>
-        <motion.div
-          className={classes.box}
-          whileHover={{
-            backgroundColor: "#d3d3d3",
-            color: "#000000",
-          }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            sed nam, illum minus, veritatis a quod soluta quasi autem nostrum
-            consectetur voluptas reprehenderit earum quo amet. Ea exercitationem
-            reiciendis minus?
-          </p>
-        </motion.div>
-        <motion.div
-          className={classes.box}
-          whileHover={{
-            backgroundColor: "#d3d3d3",
-            color: "#000000",
-          }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            sed nam, illum minus, veritatis a quod soluta quasi autem nostrum
-            consectetur voluptas reprehenderit earum quo amet. Ea exercitationem
-            reiciendis minus?
-          </p>
-        </motion.div>
+        {projects.map((project, index) => {
+          return (
+            <>
+              <motion.div
+                className={classes.box}
+                style={{ borderRadius: "20px" }}
+                // whileHover={{
+                //   backgroundColor: "#d3d3d3",
+                //   color: "#000000",
+                // }}
+                onClick={() => {
+                  setIsModalOpen((prev) => !prev);
+                  setCurrentId(index.toString());
+                }}
+                layoutId={index.toString()}
+              >
+                <h2>{project.title}</h2>
+                <p>{project.longDescription}</p>
+              </motion.div>
+            </>
+          );
+        })}
       </motion.div>
     </motion.div>
   );
