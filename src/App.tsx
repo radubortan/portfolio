@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
 import Parallax from "./components/parallax/Parallax";
 import Projects from "./components/projects/Projects";
+import Experience from "./components/experience/Experience";
 
 function App() {
   return (
@@ -11,10 +12,11 @@ function App() {
         <Navbar />
         <Hero />
       </section>
-      <section id="Experience">
+      <Experience />
+      <section id="Projects">
         <Parallax />
       </section>
-      <section id="Projects">
+      <section>
         <Projects />
       </section>
       <section id="Contact">Contact</section>

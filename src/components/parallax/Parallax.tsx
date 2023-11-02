@@ -17,7 +17,7 @@ const Parallax = () => {
 
   return (
     <div className={classes.parallax} ref={ref}>
-      <motion.h1 style={{ y: yText }}>Experience</motion.h1>
+      <motion.h1 style={{ y: yText }}>Projects</motion.h1>
       <motion.div className={classes.mountains}></motion.div>
       <motion.div
         style={{ y: yPlantes }}
