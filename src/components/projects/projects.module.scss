@@ -72,9 +72,10 @@
   .listContainer {
     padding: 37.5px;
     padding-top: 0px;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
     flex: 2;
     display: flex;
+    align-items: flex-start;
     max-width: 1366px;
     margin: auto;
     // gap: 20px;
