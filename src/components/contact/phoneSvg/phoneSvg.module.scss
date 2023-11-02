@@ -1,0 +1,13 @@
+.phoneSvg {
+  stroke: orange;
+  position: absolute;
+  margin: auto;
+
+  svg {
+    stroke: orange;
+    stroke-width: 0.3px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+}

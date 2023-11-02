@@ -4,6 +4,7 @@ import Hero from "./components/hero/Hero";
 import Parallax from "./components/parallax/Parallax";
 import Projects from "./components/projects/Projects";
 import Experience from "./components/experience/Experience";
+import Contact from "./components/contact/Contact";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
       <section>
         <Projects />
       </section>
-      <section id="Contact">Contact</section>
+      <section id="Contact">
+        <Contact />
+      </section>
     </div>
   );
 }
