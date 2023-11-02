@@ -8,33 +8,26 @@ import { AiOutlineClose } from "react-icons/ai";
 interface ModalProps {
   handleClose: () => void;
   children: ReactNode;
+  // layoutId: string;
 }
 
 const Modal = ({ handleClose, children }: ModalProps) => {
   return (
     <Backdrop onClick={handleClose}>
       <motion.div
+        // layoutId={layoutId}
         className={classes.modal}
         onClick={(e) => e.stopPropagation()}
+        // style={{ borderRadius: "20px" }}
         variants={modalVariants}
         initial="hidden"
         animate="visible"
         exit="exit"
       >
-        <motion.button
-          initial={{ color: "#ffffff" }}
-          whileHover={{
-            backgroundColor: "#eeeeee",
-          }}
-          transition={{
-            type: "",
-            duration: 1,
-          }}
-          onClick={handleClose}
-        >
+        <motion.button onClick={handleClose}>
           <AiOutlineClose size={20} className={classes.icon} />
         </motion.button>
-        {children}
+        <div className={classes.children}>{children}</div>
       </motion.div>
     </Backdrop>
   );

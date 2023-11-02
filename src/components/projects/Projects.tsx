@@ -2,13 +2,15 @@ import classes from "./projects.module.scss";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import * as variants from "./projects.variants";
 import { useRef, useState } from "react";
-import ProjectModal from "./ProjectModal";
+import ProjectModal from "./projectModal/ProjectModal";
 import { projects } from "./projects.data";
+import { Project } from "./projects.data";
 
 const Projects = () => {
   const ref = useRef<HTMLDivElement>(null);
 
-  const [currentId, setCurrentId] = useState<string>("");
+  // const [currentLayoutId, setCurrentLayoutId] = useState<string>("");
+  const [selectedProject, setSelectedProject] = useState<Project>();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -22,42 +24,44 @@ const Projects = () => {
       animate={isInView && "animate"}
       ref={ref}
     >
-      {/* <AnimatePresence initial={false} mode="wait">
+      <AnimatePresence mode="wait">
         {isModalOpen && (
-          // <ProjectModal
-          //   project="temp"
-          //   handleClose={() => setIsModalOpen((prev) => !prev)}
-          // />
-        )}
-      </AnimatePresence> */}
-
-      <AnimatePresence initial={false} mode="wait">
-        {isModalOpen && (
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              height: "100%",
-              width: "100%",
-              backgroundColor: "#00000055",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+          <ProjectModal
+            // layoutId={currentLayoutId}
+            project={selectedProject}
+            handleClose={() => {
+              setIsModalOpen(false);
             }}
-            onClick={() => setIsModalOpen((prev) => !prev)}
-          >
-            <motion.div
-              layoutId={currentId}
-              style={{
-                width: "50vw",
-                height: "400px",
-                backgroundColor: "white",
-                borderRadius: "20px",
-                userSelect: "none",
-              }}
-            ></motion.div>
-          </div>
+          />
+          // <div
+          //   style={{
+          //     position: "absolute",
+          //     top: 0,
+          //     left: 0,
+          //     height: "100%",
+          //     width: "100%",
+          //     backgroundColor: "#00000055",
+          //     display: "flex",
+          //     alignItems: "center",
+          //     justifyContent: "center",
+          //   }}
+          //   onClick={() => setIsModalOpen(false)}
+          // >
+          //   <motion.div
+          //     layoutId={currentLayoutId}
+          //     style={{
+          //       width: "50vw",
+          //       height: "400px",
+          //       backgroundColor: "white",
+          //       borderRadius: "20px",
+          //       userSelect: "none",
+          //       color: "black",
+          //       fontSize: "30px",
+          //     }}
+          //   >
+          //     This is an example
+          //   </motion.div>
+          // </div>
         )}
       </AnimatePresence>
 
@@ -108,24 +112,24 @@ const Projects = () => {
       >
         {projects.map((project, index) => {
           return (
-            <>
-              <motion.div
-                className={classes.box}
-                style={{ borderRadius: "20px" }}
-                // whileHover={{
-                //   backgroundColor: "#d3d3d3",
-                //   color: "#000000",
-                // }}
-                onClick={() => {
-                  setIsModalOpen((prev) => !prev);
-                  setCurrentId(index.toString());
-                }}
-                layoutId={index.toString()}
-              >
-                <h2>{project.title}</h2>
-                <p>{project.longDescription}</p>
-              </motion.div>
-            </>
+            <motion.div
+              key={project.title}
+              className={classes.box}
+              // style={{ borderRadius: "20px" }}
+              whileHover={{
+                backgroundColor: "#d3d3d3",
+                color: "#000000",
+              }}
+              onClick={() => {
+                setIsModalOpen(true);
+                // setCurrentLayoutId(index.toString());
+                setSelectedProject(project);
+              }}
+              // layoutId={index.toString()}
+            >
+              <h2>{project.title}</h2>
+              <p>{project.longDescription}</p>
+            </motion.div>
           );
         })}
       </motion.div>
@@ -134,7 +138,6 @@ const Projects = () => {
 };
 
 export default Projects;
-
 /*  
 - add hover effect
 - create backdrop component
