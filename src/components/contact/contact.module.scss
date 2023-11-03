@@ -31,34 +31,5 @@
   .formContainer {
     flex: 1;
     position: relative;
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-
-      input,
-      textarea {
-        padding: 20px;
-        background-color: transparent;
-        border: 1px solid white;
-        color: white;
-        border-radius: 5px;
-      }
-
-      button {
-        padding: 20px;
-        border: none;
-        background-color: orange;
-        border-radius: 5px;
-        font-weight: 500;
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 65px;
-        position: relative;
-      }
-    }
   }
 }
