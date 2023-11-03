@@ -1,14 +1,20 @@
 export const contactVariants = {
   initial: {
-    y: 500,
+    x: -500,
     opacity: 0,
   },
   animate: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
+      type: "spring",
+      stiffness: 50,
     },
   },
+};
+
+export const formVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { delay: 4, duration: 1 } },
 };

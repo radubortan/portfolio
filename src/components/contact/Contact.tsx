@@ -36,15 +36,12 @@ const Contact = () => {
   };
 
   return (
-    <motion.div
-      className={classes.container}
-      variants={variants.contactVariants}
-      initial="initial"
-      whileInView="animate"
-    >
+    <motion.div className={classes.container}>
       <motion.div
         className={classes.textContainer}
         variants={variants.contactVariants}
+        initial="initial"
+        whileInView="animate"
       >
         <motion.h1 variants={variants.contactVariants}>
           Let's work together
@@ -74,32 +71,43 @@ const Contact = () => {
 
       <div className={classes.formContainer}>
         <PhoneSvg />
-        <motion.form
+        <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, transition: { delay: 4, duration: 1 } }}
-          ref={formRef}
-          onSubmit={sendEmail}
+          whileInView={{
+            opacity: 1,
+            transition: { opacity: { duration: 1 } },
+          }}
         >
-          <input type="text" placeholder="Name" required name="name" />
-          <input type="email" placeholder="Email" required name="email" />
-          <textarea name="message" placeholder="Message" rows={8} />
-          <button>
-            <AnimatePresence mode="wait">
-              {isInitial && (
-                <motion.p
-                  animate={isSent && { opacity: 0 }}
-                  exit={{ opacity: 0, transition: { duration: 0.3 } }}
-                >
-                  Send
-                </motion.p>
-              )}
-              {isSending && <Loader />}
-            </AnimatePresence>
+          <motion.form
+            ref={formRef}
+            onSubmit={sendEmail}
+            autoComplete="off"
+            variants={variants.formVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <input type="text" placeholder="Name" required name="name" />
+            <input type="email" placeholder="Email" required name="email" />
+            <textarea name="message" placeholder="Message" rows={8} />
+            <button>
+              <AnimatePresence mode="wait">
+                {isInitial && (
+                  <motion.p
+                    animate={isSent && { opacity: 0 }}
+                    exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                  >
+                    Send
+                  </motion.p>
+                )}
+                {isSending && <Loader />}
+              </AnimatePresence>
 
-            {isSent && <Checkmark />}
-            {isError && <Cross />}
-          </button>
-        </motion.form>
+              {isSent && <Checkmark />}
+              {isError && <Cross />}
+            </button>
+          </motion.form>
+        </motion.div>
       </div>
     </motion.div>
   );
