@@ -26,18 +26,22 @@ const PhoneSvg = () => {
       >
         <motion.path
           d="M 28.189 16.504 L 26.523 16.504 C 26.523 11.067 22.101 6.646000000000001 16.667 6.646000000000001 L 16.666 4.982000000000001 C 23.021 4.979 28.189 10.149000000000001 28.189 16.504"
-          animate={{
-            pathLength: 1,
-            transition: { delay: 1, duration: 2 },
-          }}
+          animate={
+            isInView && {
+              pathLength: 1,
+              transition: { delay: 1, duration: 2 },
+            }
+          }
           style={{ pathLength, opacity }}
         />
         <motion.path
           d="M 16.666 7.856 L 16.665 9.52 C 20.518 9.52 23.648 12.652999999999999 23.646 16.503 L 25.312 16.502 C 25.312 11.735 21.436 7.856 16.666 7.856 Z"
-          animate={{
-            pathLength: 1,
-            transition: { delay: 1, duration: 2 },
-          }}
+          animate={
+            isInView && {
+              pathLength: 1,
+              transition: { delay: 1, duration: 2 },
+            }
+          }
           style={{ pathLength, opacity }}
         />
         <motion.path
