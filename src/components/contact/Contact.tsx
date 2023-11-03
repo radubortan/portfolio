@@ -90,7 +90,14 @@ const Contact = () => {
             <input type="text" placeholder="Name" required name="name" />
             <input type="email" placeholder="Email" required name="email" />
             <textarea name="message" placeholder="Message" rows={8} />
-            <button>
+            <motion.button
+              whileHover={{
+                backgroundColor: "#e09201",
+                scale: 1.02,
+              }}
+              whileTap={{ scale: 1 }}
+              transition={{ scale: { duration: 0.2 } }}
+            >
               <AnimatePresence mode="wait">
                 {isInitial && (
                   <motion.p
@@ -105,7 +112,7 @@ const Contact = () => {
 
               {isSent && <Checkmark />}
               {isError && <Cross />}
-            </button>
+            </motion.button>
           </motion.form>
         </motion.div>
       </div>
