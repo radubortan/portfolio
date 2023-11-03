@@ -4,9 +4,8 @@ export const nameVariants = {
   transition: { duration: 3, type: "spring", stiffness: 150 },
 };
 
-export const test = {
+export const linkedinVariants = {
   whileHover: {
     scale: 1.2,
-    transition: { duration: 0.2, type: "spring", stiffness: 300 },
   },
 };

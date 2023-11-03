@@ -2,22 +2,30 @@
   height: 100px;
 
   .wrapper {
-    padding: 0 100px;
+    padding: 0 50px;
     height: 100%;
     max-width: 1366px;
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
+    .alignmentDiv {
+      flex: 1;
+    }
 
     span {
       font-weight: bold;
       font-size: 20px;
     }
 
-    img {
-      display: block;
-      width: 25px;
+    a {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      img {
+        display: block;
+        width: 25px;
+      }
     }
   }
 }
