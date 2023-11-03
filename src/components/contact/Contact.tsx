@@ -1,10 +1,5 @@
 import classes from "./contact.module.scss";
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import * as variants from "./contact.variants.ts";
 import { useState } from "react";
 import Checkmark from "./checkmark/Checkmark.tsx";
@@ -14,9 +9,6 @@ import PhoneSvg from "./phoneSvg/PhoneSvg.tsx";
 const Contact = () => {
   const [isSent, setIsSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
-
-  const pathLength = useMotionValue(0);
-  const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
 
   return (
     <motion.div
@@ -68,7 +60,7 @@ const Contact = () => {
       </motion.div>
 
       <div className={classes.formContainer}>
-        <PhoneSvg opacity={opacity} pathLength={pathLength} />
+        <PhoneSvg />
         <motion.form
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transition: { delay: 4, duration: 1 } }}
@@ -89,13 +81,7 @@ const Contact = () => {
               {!isSent && isSending && <Loader />}
             </AnimatePresence>
 
-            {isSent && !isSending && (
-              <Checkmark
-                isSent={isSent}
-                opacity={opacity}
-                pathLength={pathLength}
-              />
-            )}
+            {isSent && !isSending && <Checkmark />}
           </button>
         </motion.form>
       </div>

@@ -1,12 +1,10 @@
-import { motion, MotionValue } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import classes from "./phoneSvg.module.scss";
 
-interface PhoneSvgProps {
-  pathLength: MotionValue<number>;
-  opacity: MotionValue<number>;
-}
+const PhoneSvg = () => {
+  const pathLength = useMotionValue(0);
+  const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
 
-const PhoneSvg = ({ pathLength, opacity }: PhoneSvgProps) => {
   return (
     <motion.div
       className={classes.phoneSvg}
