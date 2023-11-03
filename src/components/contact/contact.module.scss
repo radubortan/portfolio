@@ -18,6 +18,11 @@
       line-height: 88px;
     }
 
+    h1,
+    h2 {
+      user-select: none;
+    }
+
     p {
       font-weight: 300;
     }
