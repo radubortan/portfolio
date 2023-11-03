@@ -68,7 +68,7 @@ const Contact = () => {
       </motion.div>
 
       <div className={classes.formContainer}>
-        <PhoneSvg />
+        <PhoneSvg opacity={opacity} pathLength={pathLength} />
         <motion.form
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transition: { delay: 4, duration: 1 } }}
