@@ -3,11 +3,18 @@
   border: none;
   background-color: orange;
   border-radius: 5px;
-  font-weight: 500;
-  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 65px;
   position: relative;
+
+  p {
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .errorMessage {
+    position: absolute;
+  }
 }

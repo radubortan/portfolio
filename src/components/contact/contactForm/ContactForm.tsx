@@ -5,17 +5,22 @@ import * as variants from "./contactForm.variants";
 import classes from "./contactForm.module.scss";
 import SubmitButton from "./submitButton/SubmitButton";
 
+export enum FormState {
+  IDLE = "idle",
+  LOADING = "loading",
+  SUCCESS = "success",
+  ERROR = "error",
+}
+
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
-  const [isSent, setIsSent] = useState(false);
-  const [isSending, setIsSending] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [formState, setFormState] = useState<FormState>(FormState.IDLE);
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setFormState(FormState.LOADING);
 
-    setIsSending(true);
     try {
       await emailjs.sendForm(
         "service_5zlqqxm",
@@ -23,11 +28,10 @@ const ContactForm = () => {
         formRef.current!,
         "1JBZTvX7jz72hdRc4"
       );
-      setIsSending(false);
-      setIsSent(true);
+      setFormState(FormState.SUCCESS);
+      formRef.current!.reset();
     } catch (e) {
-      setIsSending(false);
-      setIsError(true);
+      setFormState(FormState.ERROR);
     }
   };
 
@@ -52,7 +56,7 @@ const ContactForm = () => {
         <input type="text" placeholder="Name" required name="name" />
         <input type="email" placeholder="Email" required name="email" />
         <textarea name="message" placeholder="Message" rows={8} />
-        <SubmitButton isSent={isSent} isSending={isSending} isError={isError} />
+        <SubmitButton formState={formState} />
       </motion.form>
     </motion.div>
   );
