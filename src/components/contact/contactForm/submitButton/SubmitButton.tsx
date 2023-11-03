@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import Cross from "../../cross/Cross";
-import Checkmark from "../../checkmark/Checkmark";
-import Loader from "../../loader/Loader";
+import Cross from "./cross/Cross";
+import Checkmark from "./checkmark/Checkmark";
+import Loader from "./loader/Loader";
 import classes from "./submitButton.module.scss";
 
 export const buttonVariants = {
