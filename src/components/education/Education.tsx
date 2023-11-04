@@ -40,7 +40,7 @@ const Education = () => {
             initial={{ height: 0 }}
             whileInView={{
               height: "100%",
-              transition: { type: "spring", stiffness: 70, duration: 1 },
+              transition: { type: "spring", stiffness: 30, duration: 1 },
             }}
           />
         </div>

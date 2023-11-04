@@ -6,10 +6,11 @@ const containerVariants = {
 };
 
 const textVariants = {
-  initial: { y: 100, opacity: 0 },
+  initial: { y: 120, opacity: 0 },
   whileInView: {
     y: 0,
     opacity: 1,
+    transition: { y: { type: "spring", stiffness: 100, damping: 20 } },
   },
 };
 
