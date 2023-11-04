@@ -74,16 +74,9 @@ const Projects = () => {
       </div>
 
       <motion.div className={classes.titleContainer}>
-        <div className={classes.title}>
-          <motion.img
-            src="/coding.webp"
-            alt="Computer screen"
-            variants={variants.textVariants}
-          />
-          <motion.h1 variants={variants.textVariants}>
-            <span>Projects</span> I've
-          </motion.h1>
-        </div>
+        <motion.h1 variants={variants.textVariants}>
+          <span>Projects</span> I've
+        </motion.h1>
         <div className={classes.title}>
           <motion.h1 variants={variants.textVariants}>Worked On</motion.h1>
           <motion.a

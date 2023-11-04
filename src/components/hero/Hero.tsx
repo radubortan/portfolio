@@ -17,18 +17,20 @@ const Hero = () => {
           <span>Software Engineer</span>
         </motion.h1>
         <motion.div className={classes.buttons}>
-          <motion.button
+          <motion.a
+            href="#Experience"
             variants={variants.textVariants}
             whileHover="whileHover"
           >
             My Experience
-          </motion.button>
-          <motion.button
+          </motion.a>
+          <motion.a
+            href="#Contact"
             variants={variants.textVariants}
             whileHover="whileHover"
           >
             Get In Touch
-          </motion.button>
+          </motion.a>
         </motion.div>
         <motion.div variants={variants.textVariants}>
           <motion.img
