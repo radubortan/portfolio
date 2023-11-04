@@ -96,13 +96,14 @@ const Projects = () => {
         </div>
         <div className={classes.title}>
           <motion.h1 variants={variants.textVariants}>Worked On</motion.h1>
-          <motion.button
+          <motion.a
+            href="#Contact"
             variants={variants.textVariants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 1 }}
           >
             GET IN TOUCH
-          </motion.button>
+          </motion.a>
         </div>
       </motion.div>
 

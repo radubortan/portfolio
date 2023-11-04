@@ -1,4 +1,3 @@
-import React from "react";
 import { useRef } from "react";
 import classes from "./parallax.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -17,7 +16,7 @@ const Parallax = () => {
 
   return (
     <div className={classes.parallax} ref={ref}>
-      <motion.h1 style={{ y: yText }}>Projects</motion.h1>
+      <motion.h1 style={{ y: yText }}>Technologies</motion.h1>
       <motion.div className={classes.mountains}></motion.div>
       <motion.div
         style={{ y: yPlantes }}
