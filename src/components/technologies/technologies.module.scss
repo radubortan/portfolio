@@ -1,0 +1,41 @@
+.container {
+  background-color: #111132;
+  padding: 0 37.5px;
+  height: 100%;
+
+  .content {
+    max-width: 1366px;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    .division {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      h1 {
+        color: orange;
+        font-size: 50px;
+      }
+
+      .list {
+        display: flex;
+        gap: 40px;
+
+        p {
+          font-size: 30px;
+          padding: 10px;
+          border: 1px solid white;
+          border-radius: 5px;
+          width: 200px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
