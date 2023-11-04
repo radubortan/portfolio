@@ -11,22 +11,23 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        <motion.h2 variants={variants.textVariants}>RADU BORTAN</motion.h2>
+        {/* <motion.h2 variants={variants.textVariants}>RADU BORTAN</motion.h2> */}
         <motion.h1 variants={variants.textVariants}>
-          Full-Stack Engineer
+          Full-Stack <br />
+          <span>Software Engineer</span>
         </motion.h1>
         <motion.div className={classes.buttons}>
           <motion.button
             variants={variants.textVariants}
-            whileHover={{ backgroundColor: "#663399" }}
+            whileHover="whileHover"
           >
             My Experience
           </motion.button>
           <motion.button
             variants={variants.textVariants}
-            whileHover={{ backgroundColor: "#663399" }}
+            whileHover="whileHover"
           >
-            Contact Me
+            Get In Touch
           </motion.button>
         </motion.div>
         <motion.div variants={variants.textVariants}>
@@ -43,7 +44,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Full-Stack Engineer
+        Full-Stack Software Engineer
       </motion.div>
     </div>
   );

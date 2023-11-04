@@ -21,6 +21,12 @@ export const textVariants = {
       duration: 1,
     },
   },
+  whileHover: {
+    backgroundColor: "#ffa500",
+    color: "black",
+    borderColor: "#ffa500",
+    transition: { duration: 0.3, borderColor: { duration: 0.1 } },
+  },
 };
 
 export const scrollVariant = {
