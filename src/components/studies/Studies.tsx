@@ -1,8 +1,8 @@
-import classes from "./education.module.scss";
+import classes from "./studies.module.scss";
 import { motion } from "framer-motion";
-import * as variants from "./education.variants";
+import * as variants from "./studies.variants";
 
-const Education = () => {
+const Studies = () => {
   return (
     <div className={classes.container}>
       <div className={classes.content}>
@@ -65,4 +65,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default Studies;
