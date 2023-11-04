@@ -7,10 +7,10 @@ const Parallax = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"],
+    offset: ["0 1", "end start"],
   });
 
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "450%"]);
+  const yText = useTransform(scrollYProgress, [0, 1], ["-200%", "200%"]);
   const yPlantes = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const yStars = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
