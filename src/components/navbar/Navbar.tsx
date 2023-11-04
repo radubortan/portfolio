@@ -7,26 +7,13 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <Sidebar />
-      <div className={classes.wrapper}>
-        <div className={classes.alignmentDiv} />
-        <motion.span
-          variants={variants.nameVariants}
-          initial="initial"
-          animate="animate"
-        >
-          Radu Bortan
-        </motion.span>
-
-        <a href="https://www.linkedin.com/in/radu-bortan/" target="_blank">
-          <motion.img
-            variants={variants.linkedinVariants}
-            whileHover="whileHover"
-            transition={{ duration: 0.2, type: "spring", stiffness: 300 }}
-            src="/linkedin.svg"
-            alt="LinkedIn logo"
-          />
-        </a>
-      </div>
+      <motion.p
+        variants={variants.nameVariants}
+        initial="initial"
+        animate="animate"
+      >
+        Radu Bortan
+      </motion.p>
     </div>
   );
 };
