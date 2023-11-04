@@ -4,7 +4,8 @@ import * as variants from "./links.variants";
 
 const items = [
   "Home",
-  "Presentation",
+  "About Me",
+  "Experience",
   "Projects",
   "Technologies",
   "Studies",

@@ -18,7 +18,7 @@ const Experience = () => {
   });
 
   return (
-    <div className={classes.container} ref={ref}>
+    <div id="Experience" className={classes.container} ref={ref}>
       <div className={classes.progress}>
         <h1>Experience</h1>
         <motion.div style={{ scaleX }} className={classes.progressBar} />
