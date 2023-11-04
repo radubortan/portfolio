@@ -9,7 +9,6 @@ import { Project } from "./projects.data";
 const Projects = () => {
   const ref = useRef<HTMLDivElement>(null);
 
-  // const [currentLayoutId, setCurrentLayoutId] = useState<string>("");
   const [selectedProject, setSelectedProject] = useState<Project>();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,51 +26,13 @@ const Projects = () => {
       <AnimatePresence mode="wait">
         {isModalOpen && (
           <ProjectModal
-            // layoutId={currentLayoutId}
             project={selectedProject}
             handleClose={() => {
               setIsModalOpen(false);
             }}
           />
-          // <div
-          //   style={{
-          //     position: "absolute",
-          //     top: 0,
-          //     left: 0,
-          //     height: "100%",
-          //     width: "100%",
-          //     backgroundColor: "#00000055",
-          //     display: "flex",
-          //     alignItems: "center",
-          //     justifyContent: "center",
-          //   }}
-          //   onClick={() => setIsModalOpen(false)}
-          // >
-          //   <motion.div
-          //     layoutId={currentLayoutId}
-          //     style={{
-          //       width: "50vw",
-          //       height: "400px",
-          //       backgroundColor: "white",
-          //       borderRadius: "20px",
-          //       userSelect: "none",
-          //       color: "black",
-          //       fontSize: "30px",
-          //     }}
-          //   >
-          //     This is an example
-          //   </motion.div>
-          // </div>
         )}
       </AnimatePresence>
-
-      <div className={classes.textContainer}>
-        <motion.p variants={variants.smallTextVariants}>
-          I have worked on <br />
-          different projects
-        </motion.p>
-        <motion.hr variants={variants.lineVariants} />
-      </div>
 
       <motion.div className={classes.titleContainer}>
         <motion.h1 variants={variants.textVariants}>
@@ -94,22 +55,19 @@ const Projects = () => {
         className={classes.listContainer}
         variants={variants.textVariants}
       >
-        {projects.map((project, index) => {
+        {projects.map((project) => {
           return (
             <motion.div
               key={project.title}
               className={classes.box}
-              // style={{ borderRadius: "20px" }}
               whileHover={{
                 backgroundColor: "#d3d3d3",
                 color: "#000000",
               }}
               onClick={() => {
                 setIsModalOpen(true);
-                // setCurrentLayoutId(index.toString());
                 setSelectedProject(project);
               }}
-              // layoutId={index.toString()}
             >
               <h2>{project.title}</h2>
               <p>{project.longDescription}</p>
@@ -122,8 +80,3 @@ const Projects = () => {
 };
 
 export default Projects;
-/*  
-- add hover effect
-- create backdrop component
-- create modal
-*/

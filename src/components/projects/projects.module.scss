@@ -7,28 +7,6 @@
   overflow: hidden;
   position: relative;
 
-  .textContainer {
-    flex: 1;
-    align-self: flex-end;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    p {
-      font-weight: 200;
-      font-size: 20px;
-      color: gray;
-      text-align: right;
-      user-select: none;
-    }
-
-    hr {
-      width: 20vw;
-      border: none;
-      border-top: 0.5px solid gray;
-    }
-  }
-
   .titleContainer {
     flex: 2;
     display: flex;
@@ -82,19 +60,11 @@
     .box {
       color: white;
       padding: 50px;
-      border: 0.5px solid gray;
+      border: 0.5px solid white;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       cursor: pointer;
-
-      &:first-of-type {
-        border-radius: 5px 0 0 5px;
-      }
-
-      &:last-of-type {
-        border-radius: 0 5px 5px 0;
-      }
     }
   }
 }
