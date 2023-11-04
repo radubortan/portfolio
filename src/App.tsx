@@ -22,10 +22,13 @@ function App() {
         <Projects />
       </section>
       <section id="Technologies">
-        <Parallax />
+        <Parallax type="technologies" />
       </section>
-      <section>Technologies</section>
-      <section id="Education">Education</section>
+      <section style={{ backgroundColor: "#111132" }}>Technologies</section>
+      <section id="Studies">
+        <Parallax type="studies" />
+      </section>
+      <section>Education</section>
       <section id="Contact">
         <Contact />
       </section>
