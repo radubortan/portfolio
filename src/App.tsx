@@ -5,6 +5,7 @@ import Parallax from "./components/parallax/Parallax";
 import Projects from "./components/projects/Projects";
 import Experience from "./components/experience/Experience";
 import Contact from "./components/contact/Contact";
+import AboutMe from "./components/aboutMe/AboutMe";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
         <Navbar />
         <Hero />
       </section>
-      <section id="Presentation">Presentation</section>
+      <section id="About Me">
+        <AboutMe />
+      </section>
       <Experience />
       <section id="Projects">
         <Projects />
