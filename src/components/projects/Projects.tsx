@@ -81,17 +81,7 @@ const Projects = () => {
             variants={variants.textVariants}
           />
           <motion.h1 variants={variants.textVariants}>
-            <motion.span
-              whileHover={{
-                color: "#ffa500",
-                transition: {
-                  duration: 0.3,
-                },
-              }}
-            >
-              Projects
-            </motion.span>{" "}
-            I've
+            <span>Projects</span> I've
           </motion.h1>
         </div>
         <div className={classes.title}>
@@ -99,7 +89,7 @@ const Projects = () => {
           <motion.a
             href="#Contact"
             variants={variants.textVariants}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 1 }}
           >
             GET IN TOUCH
