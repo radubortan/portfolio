@@ -7,7 +7,7 @@ const items = [
   "About Me",
   "Experience",
   "Projects",
-  "Technologies",
+  "Skills",
   "Studies",
   "Contact",
 ];

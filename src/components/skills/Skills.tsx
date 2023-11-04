@@ -1,8 +1,8 @@
-import classes from "./technologies.module.scss";
+import classes from "./skills.module.scss";
 import { motion } from "framer-motion";
-import * as variants from "./technologies.variants";
+import * as variants from "./skills.variants";
 
-const Technologies = () => {
+const Skills = () => {
   return (
     <div className={classes.container}>
       <div className={classes.content}>
@@ -132,4 +132,4 @@ const Technologies = () => {
   );
 };
 
-export default Technologies;
+export default Skills;

@@ -7,7 +7,7 @@ import Experience from "./components/experience/Experience";
 import Contact from "./components/contact/Contact";
 import AboutMe from "./components/aboutMe/AboutMe";
 import Studies from "./components/studies/Studies";
-import Technologies from "./components/technologies/Technologies";
+import Skills from "./components/skills/Skills";
 
 function App() {
   return (
@@ -23,11 +23,11 @@ function App() {
       <section id="Projects">
         <Projects />
       </section>
-      <section id="Technologies">
-        <Parallax type="technologies" />
+      <section id="Skills">
+        <Parallax type="skills" />
       </section>
       <section>
-        <Technologies />
+        <Skills />
       </section>
       <section id="Studies">
         <Parallax type="studies" />
