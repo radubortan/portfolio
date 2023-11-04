@@ -13,3 +13,12 @@ export const contactVariants = {
     },
   },
 };
+
+export const buttonVariants = {
+  whileHover: {
+    backgroundColor: "#ffa500",
+    color: "black",
+    borderColor: "#ffa500",
+    transition: { duration: 0.3, borderColor: { duration: 0.1 } },
+  },
+};

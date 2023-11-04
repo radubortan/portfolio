@@ -26,6 +26,20 @@
     p {
       font-weight: 300;
     }
+
+    .socialLinks {
+      display: flex;
+      gap: 20px;
+
+      a {
+        padding: 10px 20px;
+        border: 1px solid white;
+        border-radius: 10px;
+        background-color: transparent;
+        color: white;
+        font-weight: 500;
+      }
+    }
   }
 
   .formContainer {
