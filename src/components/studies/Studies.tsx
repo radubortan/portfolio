@@ -17,8 +17,8 @@ const Studies = () => {
         </motion.div>
 
         <motion.div
-          variants={variants.headersVariants}
-          initial="initial"
+          variants={variants.textVariants}
+          initial={{ ...variants.textVariants.initial, x: -400 }}
           whileInView="whileInView"
           className={classes.headers}
         >
@@ -38,7 +38,7 @@ const Studies = () => {
         <motion.div
           className={classes.text}
           variants={variants.textVariants}
-          initial="initial"
+          initial={{ ...variants.textVariants.initial, x: 400 }}
           whileInView="whileInView"
         >
           <p>

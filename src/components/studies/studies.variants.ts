@@ -4,12 +4,11 @@ export const textVariants = {
     x: 0,
     opacity: 1,
     transition: {
+      ease: "circOut",
+      duration: 0.5,
       opacity: {
         duration: 1,
       },
-      type: "spring",
-      stiffness: 80,
-      damping: 20,
     },
   },
 };
@@ -20,26 +19,7 @@ export const dividerVariants = {
   },
   whileInView: {
     height: "100%",
-    transition: { type: "spring", stiffness: 30, duration: 1 },
-  },
-};
-
-export const headersVariants = {
-  initial: {
-    x: -400,
-    opacity: 0,
-  },
-  whileInView: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 80,
-      damping: 20,
-      opacity: {
-        duration: 1,
-      },
-    },
+    transition: { ease: "easeOut", duration: 0.5 },
   },
 };
 
