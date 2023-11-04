@@ -1,44 +1,132 @@
 import classes from "./technologies.module.scss";
+import { motion } from "framer-motion";
+import * as variants from "./technologies.variants";
 
 const Technologies = () => {
   return (
     <div className={classes.container}>
       <div className={classes.content}>
-        <div className={classes.division}>
-          <h1>Front-End</h1>
+        <motion.div
+          className={classes.division}
+          variants={variants.divisonVariants}
+          initial="initial"
+          whileInView="whileInView"
+        >
+          <motion.div
+            className={classes.imageContainer}
+            variants={variants.divisionElementVariants}
+          >
+            <img src="frontend.png" alt="Front-end icon" />
+          </motion.div>
+          <motion.h1 variants={variants.divisionElementVariants}>
+            Front-End
+          </motion.h1>
           <div className={classes.list}>
-            <p>React</p>
-            <p>Angular</p>
-            <p>VueJS</p>
+            <motion.p variants={variants.divisionElementVariants}>
+              React
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              Angular
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              VueJS
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              SCSS
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              Bootstrap
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className={classes.division}>
-          <h1>Back-End</h1>
+        <motion.div
+          className={classes.division}
+          variants={variants.divisonVariants}
+          initial="initial"
+          whileInView="whileInView"
+        >
+          <motion.div
+            variants={variants.divisionElementVariants}
+            className={classes.imageContainer}
+          >
+            <img src="backend.png" alt="Back-end icon" />
+          </motion.div>
+          <motion.h1 variants={variants.divisionElementVariants}>
+            Back-End
+          </motion.h1>
           <div className={classes.list}>
-            <p>NodeJS</p>
-            <p>Java</p>
-            <p>TypeScript</p>
+            <motion.p variants={variants.divisionElementVariants}>
+              NodeJS
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              ExpressJS
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              Java
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              TypeScript
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className={classes.division}>
-          <h1>Databases</h1>
+        <motion.div
+          className={classes.division}
+          variants={variants.divisonVariants}
+          initial="initial"
+          whileInView="whileInView"
+        >
+          <motion.div
+            variants={variants.divisionElementVariants}
+            className={classes.imageContainer}
+          >
+            <img src="database.png" alt="Database icon" />
+          </motion.div>
+          <motion.h1 variants={variants.divisionElementVariants}>
+            Databases
+          </motion.h1>
           <div className={classes.list}>
-            <p>PostgreSQL</p>
-            <p>MongoDB</p>
-            <p>MySQL</p>
+            <motion.p variants={variants.divisionElementVariants}>
+              PostgreSQL
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              MongoDB
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              MySQL
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className={classes.division}>
-          <h1>Tools</h1>
+        <motion.div
+          className={classes.division}
+          variants={variants.divisonVariants}
+          initial="initial"
+          whileInView="whileInView"
+        >
+          <motion.div
+            variants={variants.divisionElementVariants}
+            className={classes.imageContainer}
+          >
+            <img src="tools.png" alt="Tools icon" />
+          </motion.div>
+          <motion.h1 variants={variants.divisionElementVariants}>
+            Tools
+          </motion.h1>
           <div className={classes.list}>
-            <p>GitHub</p>
-            <p>Figma</p>
-            <p>Photoshop</p>
+            <motion.p variants={variants.divisionElementVariants}>Git</motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              Docker
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              Figma
+            </motion.p>
+            <motion.p variants={variants.divisionElementVariants}>
+              Photoshop
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
