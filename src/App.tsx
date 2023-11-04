@@ -6,6 +6,7 @@ import Projects from "./components/projects/Projects";
 import Experience from "./components/experience/Experience";
 import Contact from "./components/contact/Contact";
 import AboutMe from "./components/aboutMe/AboutMe";
+import Education from "./components/education/Education";
 
 function App() {
   return (
@@ -28,7 +29,9 @@ function App() {
       <section id="Studies">
         <Parallax type="studies" />
       </section>
-      <section>Education</section>
+      <section>
+        <Education />
+      </section>
       <section id="Contact">
         <Contact />
       </section>
