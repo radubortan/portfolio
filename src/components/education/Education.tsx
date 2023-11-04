@@ -1,5 +1,6 @@
 import classes from "./education.module.scss";
 import { motion } from "framer-motion";
+import * as variants from "./education.variants";
 
 const Education = () => {
   return (
@@ -7,27 +8,18 @@ const Education = () => {
       <div className={classes.content}>
         <motion.div
           className={classes.imageContainer}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          whileInView="whileInView"
+          initial={{ ...variants.schoolVariants.initial, y: 100 }}
+          variants={variants.schoolVariants}
           transition={{ opacity: { duration: 1 } }}
         >
-          <img src="polytech.png" alt="" />
+          <img src="polytech.png" alt="Polytech logo" />
         </motion.div>
 
         <motion.div
-          initial={{ x: -400, opacity: 0 }}
-          whileInView={{
-            x: 0,
-            opacity: 1,
-            transition: {
-              type: "spring",
-              stiffness: 80,
-              damping: 20,
-              opacity: {
-                duration: 1,
-              },
-            },
-          }}
+          variants={variants.headersVariants}
+          initial="initial"
+          whileInView="whileInView"
           className={classes.headers}
         >
           <h1>Engineering Degree in Computer Science</h1>
@@ -37,29 +29,17 @@ const Education = () => {
 
         <div className={classes.divider}>
           <motion.span
-            initial={{ height: 0 }}
-            whileInView={{
-              height: "100%",
-              transition: { type: "spring", stiffness: 30, duration: 1 },
-            }}
+            variants={variants.dividerVariants}
+            initial="initial"
+            whileInView="whileInView"
           />
         </div>
 
         <motion.div
           className={classes.text}
-          initial={{ opacity: 0, x: 400 }}
-          whileInView={{
-            x: 0,
-            opacity: 1,
-            transition: {
-              opacity: {
-                duration: 1,
-              },
-              type: "spring",
-              stiffness: 80,
-              damping: 20,
-            },
-          }}
+          variants={variants.textVariants}
+          initial="initial"
+          whileInView="whileInView"
         >
           <p>
             This degree has allowed me to explore the different parts of
@@ -69,10 +49,11 @@ const Education = () => {
         </motion.div>
 
         <motion.a
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 1 }}
+          whileTap="whileTap"
+          whileHover="whileHover"
+          whileInView="whileInView"
+          initial={{ ...variants.schoolVariants.initial, y: -100 }}
+          variants={variants.schoolVariants}
           transition={{ scale: { duration: 0.2 }, opacity: { duration: 1 } }}
           href="https://www.polytech.umontpellier.fr/formation/cycle-ingenieur/informatique-et-gestion"
           target="_blank"
