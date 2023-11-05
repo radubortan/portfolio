@@ -17,14 +17,14 @@ const Hero = () => {
         </motion.h1>
         <motion.div className={classes.buttons}>
           <motion.a
-            href="#Experience"
+            href="#experience"
             variants={variants.textVariants}
             whileHover="whileHover"
           >
             Mon Expérience
           </motion.a>
           <motion.a
-            href="#Contact"
+            href="#contact"
             variants={variants.textVariants}
             whileHover="whileHover"
           >
