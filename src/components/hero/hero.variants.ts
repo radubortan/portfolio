@@ -1,7 +1,7 @@
 export const wrapperVariants = {
   animate: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -21,6 +21,9 @@ export const textVariants = {
       duration: 1,
     },
   },
+};
+
+export const buttonVariants = {
   whileHover: {
     backgroundColor: "#ffa500",
     color: "black",

@@ -11,26 +11,27 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
+        <motion.h2 variants={variants.textVariants}>RADU BORTAN</motion.h2>
         <motion.h1 variants={variants.textVariants}>
           Ingénieur <br />
           <span>Full-Stack</span>
         </motion.h1>
-        <motion.div className={classes.buttons}>
+        <div className={classes.buttons}>
           <motion.a
-            href="#experience"
+            whileHover={variants.buttonVariants.whileHover}
             variants={variants.textVariants}
-            whileHover="whileHover"
+            href="#experience"
           >
             Mon Expérience
           </motion.a>
           <motion.a
             href="#contact"
             variants={variants.textVariants}
-            whileHover="whileHover"
+            whileHover={variants.buttonVariants.whileHover}
           >
             Prendre Contact
           </motion.a>
-        </motion.div>
+        </div>
         <motion.div variants={variants.textVariants}>
           <motion.img
             variants={variants.scrollVariant}
