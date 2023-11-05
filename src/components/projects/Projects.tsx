@@ -1,28 +1,18 @@
 import classes from "./projects.module.scss";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import * as variants from "./projects.variants";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import ProjectModal from "./projectModal/ProjectModal";
 import { projects } from "./projects.data";
 import { Project } from "./projects.data";
 
 const Projects = () => {
-  const ref = useRef<HTMLDivElement>(null);
-
   const [selectedProject, setSelectedProject] = useState<Project>();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const isInView = useInView(ref, { margin: "-100px" });
-
   return (
-    <motion.div
-      className={classes.container}
-      variants={variants.containerVariants}
-      initial="initial"
-      animate={isInView && "animate"}
-      ref={ref}
-    >
+    <div className={classes.container}>
       <AnimatePresence mode="wait">
         {isModalOpen && (
           <ProjectModal
@@ -34,13 +24,19 @@ const Projects = () => {
         )}
       </AnimatePresence>
 
-      <motion.div className={classes.titleContainer}>
-        <motion.h1 variants={variants.textVariants}>
+      <div className={classes.titleContainer}>
+        <motion.h1
+          variants={variants.textVariants}
+          initial="initial"
+          whileInView="whileInView"
+        >
           Mes <span>Projets</span>
         </motion.h1>
-      </motion.div>
+      </div>
 
       <motion.div
+        initial="initial"
+        whileInView="whileInView"
         className={classes.listContainer}
         variants={variants.textVariants}
       >
@@ -59,12 +55,12 @@ const Projects = () => {
               }}
             >
               <h2>{project.title}</h2>
-              <p>{project.longDescription}</p>
+              <p className={classes.learnMore}>Plus d'infos</p>
             </motion.div>
           );
         })}
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

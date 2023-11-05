@@ -1,26 +1,30 @@
 .modal {
   width: clamp(50%, 700px, 90%);
-  height: min(50%, 200px);
-  margin: auto;
+  max-height: 70%;
   padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 5px;
+  position: relative;
+  gap: 30px;
+  overflow-y: auto;
 
-  button {
-    align-self: flex-end;
-    background-color: transparent;
-    border: none;
+  .buttonContainer {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    bottom: 0;
 
-    .icon {
-      color: rgb(128, 128, 128);
+    button {
+      top: 0px;
+      position: sticky;
+      background-color: white;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+
+      .icon {
+        color: rgb(128, 128, 128);
+      }
     }
-  }
-
-  .children {
-    flex: 2;
   }
 }

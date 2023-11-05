@@ -4,7 +4,7 @@ import * as variants from "./skills.variants";
 
 const Skills = () => {
   return (
-    <div className={classes.container}>
+    <motion.div className={classes.container}>
       <div className={classes.content}>
         <motion.div
           className={classes.division}
@@ -137,7 +137,7 @@ const Skills = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,32 +1,37 @@
 export interface Project {
   title: string;
-  shortDescription: string;
-  longDescription: string;
+  longDescription: string[];
+  skills: string[];
+  link?: string;
 }
 
 export const projects: Project[] = [
   {
-    title: "Project 1",
-    shortDescription: "This is a short description for project 1",
-    longDescription:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos corporis ipsa itaque a. Sint nam, dolores ducimus quos at ratione! Eos voluptatem at earum culpa vitae. Deleniti officiis quas unde?",
+    title: "Portfolio",
+    longDescription: [
+      "Le site sur lequel vous vous trouvez actuellement, codé en React et TypeScript.",
+      "Le style et les animations utilisent SCSS et Framer Motion.",
+    ],
+    link: "https://github.com/radubortan/portfolio",
+    skills: ["React", "TypeScript", "SCSS", "Framer Motion"],
   },
   {
-    title: "Project 2",
-    shortDescription: "This is a short description for project 2",
-    longDescription:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos corporis ipsa itaque a. Sint nam, dolores ducimus quos at ratione! Eos voluptatem at earum culpa vitae. Deleniti officiis quas unde?",
+    title: "Application recherche d'emploi",
+    longDescription: [
+      "Application permettant aux utilisateurs de publier des offres d'emploi et de postuler à celles-ci.",
+      "L'application est structurée en micro-services comme par exemple l'autentification la gestion des profils ou la gestion des offres d'emploi.",
+      "Le back-end est codé en Java Spring Boot avec un front-end React.",
+    ],
+    skills: ["Java", "Spring Boot", "React", "Micro-services"],
   },
   {
-    title: "Project 3",
-    shortDescription: "This is a short description for project 3",
-    longDescription:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos corporis ipsa itaque a. Sint nam, dolores ducimus quos at ratione! Eos voluptatem at earum culpa vitae. Deleniti officiis quas unde?",
-  },
-  {
-    title: "Project 4",
-    shortDescription: "This is a short description for project 4",
-    longDescription:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos corporis ipsa itaque a. Sint nam, dolores ducimus quos at ratione! Eos voluptatem at earum culpa vitae. Deleniti officiis quas unde?",
+    title: "Application culinaire web et mobile",
+    longDescription: [
+      "L'application permet de créer des recettes pouvant être réutilisées au sein d'autres recettes.",
+      "Un système de gestion des stocks d'ingrédients permet de calculer le coût des repas.",
+      "L'application est disponible sous forme d'application web, utilisant React, ainsi que sous forme d'application mobile, développée en utilisant Swift et SwiftUI.",
+    ],
+    link: "https://github.com/radubortan/swift-project",
+    skills: ["React", "Swift", "SwiftUI", "Firebase"],
   },
 ];

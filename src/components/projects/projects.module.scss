@@ -3,12 +3,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   position: relative;
+  gap: 50px;
 
   .titleContainer {
-    flex: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,20 +32,33 @@
     padding: 37.5px;
     padding-top: 0px;
     padding-bottom: 25px;
-    flex: 2;
     display: flex;
-    align-items: flex-start;
     max-width: 1366px;
-    margin: auto;
+    justify-content: center;
 
     .box {
+      flex: 1;
       color: white;
-      padding: 50px;
+      padding: 40px;
       border: 0.5px solid white;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       cursor: pointer;
+      position: relative;
+      flex-direction: column;
+      gap: 20px;
+
+      h2 {
+        font-size: 25px;
+      }
+
+      p {
+        color: gray;
+        font-size: 15px;
+        bottom: 10px;
+      }
     }
   }
 }
