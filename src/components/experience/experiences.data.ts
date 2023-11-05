@@ -42,7 +42,7 @@ export const experiences: Experience[] = [
     id: 3,
     title: "Assistant de Recherche",
     company: "Helmut Schmidt University",
-    image: "/hsu.webp",
+    image: "hsu.webp",
     imageAlt: "Helmut Schmidt University",
     description:
       "En tant que membre du département des Systèmes Logistiques, j'ai élaboré des scripts Python visant à traiter des données LiDAR pour des robots autonomes.",
@@ -54,7 +54,7 @@ export const experiences: Experience[] = [
   {
     id: 4,
     title: "Amélioration Application Médicale",
-    image: "/consultation.jpg",
+    image: "consultation.jpg",
     company: "OncoAssist",
     imageAlt: "Doctor and patient vector art",
     description:

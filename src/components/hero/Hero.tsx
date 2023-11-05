@@ -35,7 +35,7 @@ const Hero = () => {
         <motion.div variants={variants.textVariants}>
           <motion.img
             variants={variants.scrollVariant}
-            src="/scroll.png"
+            src="scroll.png"
             alt="Scroll animation"
           />
         </motion.div>
