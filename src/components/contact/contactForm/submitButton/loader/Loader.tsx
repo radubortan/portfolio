@@ -1,5 +1,5 @@
 import classes from "./loader.module.scss";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
 export const containerVariants = {
   initial: {
@@ -17,7 +17,7 @@ export const containerVariants = {
   },
 };
 
-export const dotVariants = {
+export const dotVariants: Variants = {
   initial: {
     y: "-50%",
   },

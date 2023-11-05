@@ -1,3 +1,5 @@
+import { Variants } from "framer-motion";
+
 export const wrapperVariants = {
   animate: {
     transition: {
@@ -32,7 +34,7 @@ export const buttonVariants = {
   },
 };
 
-export const scrollVariant = {
+export const scrollVariant: Variants = {
   initial: { opacity: 1, y: 0 },
   animate: {
     opacity: 0,
@@ -45,7 +47,7 @@ export const scrollVariant = {
   },
 };
 
-export const sliderVariants = {
+export const sliderVariants: Variants = {
   initial: {
     x: 0,
   },
