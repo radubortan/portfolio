@@ -47,7 +47,7 @@ const Contact = () => {
           <motion.a
             variants={variants.buttonVariants}
             whileHover="whileHover"
-            href="/resume.pdf"
+            href="resume.pdf"
             download="Bortan Radu CV.pdf"
           >
             CV
