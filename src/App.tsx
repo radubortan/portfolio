@@ -12,30 +12,30 @@ import Skills from "./components/skills/Skills";
 function App() {
   return (
     <div>
-      <section id="Home">
+      <section id="home">
         <Navbar />
         <Hero />
       </section>
-      <section id="About Me">
+      <section id="aboutMe">
         <AboutMe />
       </section>
       <Experience />
-      <section id="Projects">
+      <section id="projects">
         <Projects />
       </section>
-      <section id="Skills">
+      <section id="skills">
         <Parallax type="skills" />
       </section>
       <section>
         <Skills />
       </section>
-      <section id="Studies">
+      <section id="studies">
         <Parallax type="studies" />
       </section>
       <section>
         <Studies />
       </section>
-      <section id="Contact">
+      <section id="contact">
         <Contact />
       </section>
     </div>

@@ -22,7 +22,10 @@ const Studies = () => {
           whileInView="whileInView"
           className={classes.headers}
         >
-          <h1>Engineering Degree in Computer Science</h1>
+          <h1>
+            Diplôme d'Ingénieur <br />
+            en Informatique
+          </h1>
           <h2>Polytech Montpellier</h2>
           <h3>2018 - 2023</h3>
         </motion.div>
@@ -42,9 +45,13 @@ const Studies = () => {
           whileInView="whileInView"
         >
           <p>
-            This degree has allowed me to explore the different parts of
-            computer science, such as web development, mobile app development,
-            software engineering, databases and IoT.
+            Mes études m'ont permis de découvrir les différentes facettes de
+            l'informatique, comme le développement web, l'IoT, le génie logiciel
+            ou les bases de données.
+          </p>
+          <p>
+            Cette vision globale m'a doté d'une grande flexibilité pour
+            m'adapter aisément à divers projets.
           </p>
         </motion.div>
 
@@ -58,7 +65,7 @@ const Studies = () => {
           href="https://www.polytech.umontpellier.fr/formation/cycle-ingenieur/informatique-et-gestion"
           target="_blank"
         >
-          School Website
+          Site école
         </motion.a>
       </div>
     </div>

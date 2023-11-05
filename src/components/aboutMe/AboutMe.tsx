@@ -24,24 +24,25 @@ const AboutMe = () => {
       viewport={{ margin: "-100px" }}
     >
       <div className={classes.headers}>
-        <motion.h1 variants={textVariants}>Hi, my name is Radu!</motion.h1>
-        <motion.h2 variants={textVariants}>
-          Full-Stack Software Engineer
-        </motion.h2>
+        <motion.h1 variants={textVariants}>
+          Bonjour, je m'appelle Radu!
+        </motion.h1>
+        <motion.h2 variants={textVariants}>Ingénieur Full-Stack</motion.h2>
       </div>
 
       <div className={classes.smallTextContainer}>
         <motion.p variants={textVariants}>
-          I love collaborating on projects with real world impact. I'm
-          particulartly fond of front-end development and UI/UX.
+          J'adore collaborer sur des projets ayant un impact. J'ai une affection
+          particulière pour le développement front-end et l'UI/UX.
         </motion.p>
         <motion.p variants={textVariants}>
-          I am currently looking for a full-stack position. If you have an
-          interesting project, don't desitate to get in touch!
+          Je suis actuellement à la recherche d'un poste de développeur
+          full-stack. Si vous avez un projet intéressant, n'hésitez pas à me
+          contacter !
         </motion.p>
         <motion.p variants={textVariants}>
-          Out of the office, I like following motorsport, looking at the latest
-          gadgets, and playing with my cat.
+          En dehors du travail, j'aime suivre les sports mécaniques, découvrir
+          les derniers gadgets et jouer avec mon chat.
         </motion.p>
       </div>
       <motion.img variants={textVariants} src="cat.png" alt="ginger cat icon" />

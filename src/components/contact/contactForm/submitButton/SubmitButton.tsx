@@ -34,7 +34,7 @@ const SubmitButton = ({ formState }: { formState: FormState }) => {
       <AnimatePresence mode="wait">
         {isIdle && (
           <motion.p exit={{ opacity: 0, transition: { duration: 0.3 } }}>
-            Send
+            Envoyer
           </motion.p>
         )}
         {isLoading && <Loader />}
@@ -47,7 +47,7 @@ const SubmitButton = ({ formState }: { formState: FormState }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          An error has occurred. Try again.
+          Il y a eu une erreur. Réessayer.
         </motion.p>
       )}
     </motion.button>

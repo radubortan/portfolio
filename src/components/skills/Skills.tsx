@@ -18,9 +18,11 @@ const Skills = () => {
           >
             <img src="frontend.png" alt="Front-end icon" />
           </motion.div>
-          <motion.h1 variants={variants.divisionElementVariants}>
-            Front-End
-          </motion.h1>
+          <div className={classes.h1Container}>
+            <motion.h1 variants={variants.divisionElementVariants}>
+              Front-End
+            </motion.h1>
+          </div>
           <div className={classes.list}>
             <motion.p variants={variants.divisionElementVariants}>
               React
@@ -52,9 +54,11 @@ const Skills = () => {
           >
             <img src="backend.png" alt="Back-end icon" />
           </motion.div>
-          <motion.h1 variants={variants.divisionElementVariants}>
-            Back-End
-          </motion.h1>
+          <div className={classes.h1Container}>
+            <motion.h1 variants={variants.divisionElementVariants}>
+              Back-End
+            </motion.h1>
+          </div>
           <div className={classes.list}>
             <motion.p variants={variants.divisionElementVariants}>
               NodeJS
@@ -83,9 +87,12 @@ const Skills = () => {
           >
             <img src="database.png" alt="Database icon" />
           </motion.div>
-          <motion.h1 variants={variants.divisionElementVariants}>
-            Databases
-          </motion.h1>
+          <div className={classes.h1Container}>
+            <motion.h1 variants={variants.divisionElementVariants}>
+              Bases de données
+            </motion.h1>
+          </div>
+
           <div className={classes.list}>
             <motion.p variants={variants.divisionElementVariants}>
               PostgreSQL
@@ -111,9 +118,11 @@ const Skills = () => {
           >
             <img src="tools.png" alt="Tools icon" />
           </motion.div>
-          <motion.h1 variants={variants.divisionElementVariants}>
-            Tools
-          </motion.h1>
+          <div className={classes.h1Container}>
+            <motion.h1 variants={variants.divisionElementVariants}>
+              Outils
+            </motion.h1>
+          </div>
           <div className={classes.list}>
             <motion.p variants={variants.divisionElementVariants}>Git</motion.p>
             <motion.p variants={variants.divisionElementVariants}>

@@ -15,20 +15,20 @@ const Contact = () => {
         whileInView="animate"
       >
         <motion.h1 variants={variants.contactVariants}>
-          Let's work together
+          Prenons contact
         </motion.h1>
         <motion.div
           className={classes.item}
           variants={variants.contactVariants}
         >
-          <h2>Mail</h2>
+          <h2>Email</h2>
           <p>bortanradu@gmail.com</p>
         </motion.div>
         <motion.div
           className={classes.item}
           variants={variants.contactVariants}
         >
-          <h2>Address</h2>
+          <h2>Adresse</h2>
           <p>Montpellier, France</p>
         </motion.div>
         <motion.div
@@ -50,7 +50,7 @@ const Contact = () => {
             href="/resume.pdf"
             download="Bortan Radu CV.pdf"
           >
-            Resume
+            CV
           </motion.a>
         </motion.div>
       </motion.div>

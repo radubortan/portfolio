@@ -36,19 +36,8 @@ const Projects = () => {
 
       <motion.div className={classes.titleContainer}>
         <motion.h1 variants={variants.textVariants}>
-          <span>Projects</span> I've
+          Mes <span>Projets</span>
         </motion.h1>
-        <div className={classes.title}>
-          <motion.h1 variants={variants.textVariants}>Worked On</motion.h1>
-          <motion.a
-            href="#Contact"
-            variants={variants.textVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 1 }}
-          >
-            GET IN TOUCH
-          </motion.a>
-        </div>
       </motion.div>
 
       <motion.div

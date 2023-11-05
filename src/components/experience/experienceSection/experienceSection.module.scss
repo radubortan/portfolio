@@ -7,7 +7,6 @@
     padding: 0 37.5px;
     max-width: 1366px;
     height: 100%;
-    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,18 +33,48 @@
       flex-direction: column;
       gap: 20px;
 
-      h2 {
-        font-size: 60px;
+      .headers {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        h2 {
+          font-size: 50px;
+          line-height: 1;
+        }
+
+        h3 {
+          font-size: 40px;
+          color: orange;
+        }
+
+        p {
+          font-size: 20px;
+          color: white;
+        }
       }
 
-      h3 {
-        font-size: 40px;
-        color: orange;
+      .descriptions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        p {
+          color: gray;
+          font-size: 20px;
+        }
       }
 
-      p {
-        color: gray;
-        font-size: 20px;
+      .skills {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+          border: 1px solid white;
+          padding: 5px;
+          border-radius: 5px;
+        }
       }
     }
   }

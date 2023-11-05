@@ -11,10 +11,9 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        {/* <motion.h2 variants={variants.textVariants}>RADU BORTAN</motion.h2> */}
         <motion.h1 variants={variants.textVariants}>
-          Full-Stack <br />
-          <span>Software Engineer</span>
+          Ingénieur <br />
+          <span>Full-Stack</span>
         </motion.h1>
         <motion.div className={classes.buttons}>
           <motion.a
@@ -22,14 +21,14 @@ const Hero = () => {
             variants={variants.textVariants}
             whileHover="whileHover"
           >
-            My Experience
+            Mon Expérience
           </motion.a>
           <motion.a
             href="#Contact"
             variants={variants.textVariants}
             whileHover="whileHover"
           >
-            Get In Touch
+            Prendre Contact
           </motion.a>
         </motion.div>
         <motion.div variants={variants.textVariants}>
@@ -46,7 +45,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Full-Stack Software Engineer
+        Ingénieur Full-Stack
       </motion.div>
     </div>
   );

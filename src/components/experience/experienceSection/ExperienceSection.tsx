@@ -19,9 +19,22 @@ const ExperienceSection = ({ experience }: { experience: Experience }) => {
           <img src={experience.image} alt={experience.imageAlt} />
         </div>
         <motion.div className={classes.textContainer} style={{ y }}>
-          <h2>{experience.title}</h2>
-          <h3>{experience.company}</h3>
-          <p>{experience.description}</p>
+          <div className={classes.headers}>
+            <h2>{experience.title}</h2>
+            <h3>{experience.company}</h3>
+            <p>{experience.dates}</p>
+          </div>
+
+          <div className={classes.descriptions}>
+            <p>{experience.description}</p>
+            {experience.description2 && <p>{experience.description2}</p>}
+          </div>
+
+          <div className={classes.skills}>
+            {experience.skills.map((skill) => {
+              return <span>{skill}</span>;
+            })}
+          </div>
         </motion.div>
       </div>
     </section>

@@ -53,7 +53,7 @@ const ContactForm = () => {
         whileInView="animate"
         viewport={{ once: true }}
       >
-        <input type="text" placeholder="Name" required name="name" />
+        <input type="text" placeholder="Nom" required name="name" />
         <input type="email" placeholder="Email" required name="email" />
         <textarea name="message" placeholder="Message" rows={8} />
         <SubmitButton formState={formState} />
