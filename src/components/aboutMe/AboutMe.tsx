@@ -38,7 +38,7 @@ const AboutMe = () => {
         <motion.p variants={textVariants}>
           Je suis actuellement à la recherche d'un poste de développeur
           full-stack. Si vous avez un projet intéressant, n'hésitez pas à me
-          contacter !
+          contacter!
         </motion.p>
         <motion.p variants={textVariants}>
           En dehors du travail, j'aime suivre les sports mécaniques, découvrir

@@ -32,7 +32,7 @@ const ExperienceSection = ({ experience }: { experience: Experience }) => {
 
           <div className={classes.skills}>
             {experience.skills.map((skill) => {
-              return <span>{skill}</span>;
+              return <span key={skill}>{skill}</span>;
             })}
           </div>
         </motion.div>

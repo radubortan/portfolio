@@ -28,12 +28,12 @@ const ProjectModal = ({ project, handleClose }: ProjectModalProps) => {
         <h1 className={classes.title}>{project?.title}</h1>
         <div className={classes.descriptionContainer}>
           {project?.longDescription.map((description) => {
-            return <p>{description}</p>;
+            return <p key={description}>{description}</p>;
           })}
         </div>
         <div className={classes.skills}>
           {project?.skills.map((skill) => {
-            return <span>{skill}</span>;
+            return <span key={skill}>{skill}</span>;
           })}
         </div>
         {project?.link && (
