@@ -72,6 +72,10 @@ button {
     scroll-snap-align: none;
   }
 
+  #projects {
+    height: auto;
+  }
+
   :root {
     --extra-small-text: 0.85rem;
     --small-text: 1rem;

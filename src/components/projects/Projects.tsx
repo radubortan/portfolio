@@ -5,38 +5,44 @@ import { useState } from "react";
 import ProjectModal from "./projectModal/ProjectModal";
 import { projects } from "./projects.data";
 import { Project } from "./projects.data";
+import useScreenSize from "../../hooks/useScreenSize";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project>();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const screenSize = useScreenSize();
+  const isMobileDevice = screenSize.width <= 768;
+
   return (
-    <div className={classes.container}>
+    <motion.div
+      initial="initial"
+      whileInView="whileInView"
+      viewport={{
+        once: isMobileDevice,
+      }}
+      className={classes.container}
+    >
       <AnimatePresence mode="wait">
         {isModalOpen && (
           <ProjectModal
             project={selectedProject}
             handleClose={() => {
               setIsModalOpen(false);
+              document.body.style.overflow = "auto";
             }}
           />
         )}
       </AnimatePresence>
 
       <div className={classes.titleContainer}>
-        <motion.h1
-          variants={variants.textVariants}
-          initial="initial"
-          whileInView="whileInView"
-        >
+        <motion.h1 variants={variants.textVariants}>
           Mes <span>Projets</span>
         </motion.h1>
       </div>
 
       <motion.div
-        initial="initial"
-        whileInView="whileInView"
         className={classes.listContainer}
         variants={variants.textVariants}
       >
@@ -50,6 +56,7 @@ const Projects = () => {
                 color: "#000000",
               }}
               onClick={() => {
+                document.body.style.overflow = "hidden";
                 setIsModalOpen(true);
                 setSelectedProject(project);
               }}
@@ -60,7 +67,7 @@ const Projects = () => {
           );
         })}
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

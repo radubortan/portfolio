@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .container {
   background: linear-gradient(180deg, #0c0c1d, #111132);
   height: 100%;
@@ -9,6 +11,10 @@
   position: relative;
   gap: 50px;
 
+  @include mobile {
+    padding: 100px 0 20px;
+  }
+
   .titleContainer {
     display: flex;
     flex-direction: column;
@@ -16,10 +22,14 @@
     justify-content: center;
 
     h1 {
-      font-size: 96px;
+      font-size: calc(var(--ultra-big-text) + 1rem);
       font-weight: 300;
       user-select: none;
       line-height: 1.2;
+
+      @include mobile {
+        font-size: calc(var(--ultra-big-text) + 0.5rem);
+      }
 
       span {
         font-weight: 600;
@@ -36,6 +46,11 @@
     max-width: 1366px;
     justify-content: center;
 
+    @include mobile {
+      flex-direction: column;
+      padding: 0 20px;
+    }
+
     .box {
       flex: 1;
       color: white;
@@ -51,12 +66,12 @@
       gap: 20px;
 
       h2 {
-        font-size: 25px;
+        font-size: calc(var(--medium-text) + 0.3rem);
       }
 
       p {
         color: gray;
-        font-size: 15px;
+        font-size: var(--small-text);
         bottom: 10px;
       }
     }

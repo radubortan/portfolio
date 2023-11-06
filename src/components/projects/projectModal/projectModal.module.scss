@@ -1,3 +1,5 @@
+@import "../../../app.scss";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,11 @@
   color: black;
 
   .title {
-    font-size: 30px;
+    font-size: calc(var(--extra-big-text) - 1rem);
+
+    @include mobile {
+      font-size: var(--extra-big-text);
+    }
   }
 
   .descriptionContainer {
@@ -15,7 +21,11 @@
     gap: 10px;
 
     p {
-      font-size: 20px;
+      font-size: calc(var(--medium-text) - 0.3rem);
+
+      @include mobile {
+        font-size: var(--medium-text);
+      }
     }
   }
 
@@ -26,6 +36,10 @@
       border: 2px solid black;
       padding: 5px;
       border-radius: 5px;
+    }
+
+    @include mobile {
+      flex-wrap: wrap;
     }
   }
 
