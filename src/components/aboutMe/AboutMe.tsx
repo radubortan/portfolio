@@ -1,5 +1,6 @@
 import classes from "./aboutMe.module.scss";
 import { motion } from "framer-motion";
+import useScreenSize from "../../hooks/useScreenSize";
 
 const containerVariants = {
   whileInView: { transition: { staggerChildren: 0.05 } },
@@ -15,13 +16,19 @@ const textVariants = {
 };
 
 const AboutMe = () => {
+  const screenSize = useScreenSize();
+  const isMobileDevice = screenSize.width <= 768;
+
   return (
     <motion.div
       variants={containerVariants}
       initial="initial"
       whileInView="whileInView"
       className={classes.container}
-      viewport={{ margin: "-100px" }}
+      viewport={{
+        margin: !isMobileDevice ? "-100px" : "",
+        once: isMobileDevice,
+      }}
     >
       <div className={classes.headers}>
         <motion.h1 variants={textVariants}>
