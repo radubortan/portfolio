@@ -6,7 +6,7 @@
   justify-content: center;
   background-color: white;
   color: black;
-  position: relative;
+  height: 100%;
 
   .background {
     // needed so the sidebar doesn't pop in when the page loads
@@ -18,5 +18,14 @@
     bottom: 0;
     width: 400px;
     background-color: white;
+  }
+
+  .backdrop {
+    top: 0;
+    right: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
   }
 }

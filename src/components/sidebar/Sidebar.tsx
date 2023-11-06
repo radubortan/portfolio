@@ -10,6 +10,14 @@ const Sidebar = () => {
 
   return (
     <motion.div className={classes.sidebar} animate={open ? "open" : "closed"}>
+      {open && (
+        <div
+          className={classes.backdrop}
+          onClick={() => {
+            setOpen((prev) => !prev);
+          }}
+        />
+      )}
       <motion.div
         className={classes.background}
         variants={variants.sidebarVariants}
