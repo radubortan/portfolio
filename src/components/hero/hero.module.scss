@@ -1,5 +1,7 @@
+@import "../../app.scss";
+
 .container {
-  height: calc(100vh - 100px);
+  height: calc(100dvh - 100px);
   background: linear-gradient(180deg, #0c0c1d, #111132);
   position: relative;
   overflow: hidden;
@@ -16,16 +18,24 @@
     justify-content: center;
     gap: 40px;
 
+    @include mobile {
+      align-items: center;
+    }
+
     h2 {
-      font-size: 30px;
+      font-size: var(--big-text);
       color: orange;
       letter-spacing: 10px;
       user-select: none;
     }
 
     h1 {
-      font-size: 88px;
+      font-size: var(--extra-big-text);
       user-select: none;
+
+      @include mobile {
+        text-align: center;
+      }
 
       span {
         color: orange;
@@ -44,12 +54,16 @@
         color: white;
         font-weight: 500;
         cursor: pointer;
-        font-size: 14px;
+        font-size: var(--extra-small-text);
       }
     }
 
     img {
       width: 50px;
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 
@@ -62,5 +76,10 @@
     font-weight: bold;
     z-index: 0;
     user-select: none;
+
+    @include mobile {
+      font-size: 30vh;
+      bottom: -50px;
+    }
   }
 }

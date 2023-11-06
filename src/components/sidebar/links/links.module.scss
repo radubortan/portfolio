@@ -11,6 +11,6 @@
   justify-content: center;
 
   a {
-    font-size: $big-text;
+    font-size: var(--big-text);
   }
 }
