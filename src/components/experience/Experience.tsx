@@ -24,11 +24,13 @@ const Experience = () => {
         <motion.div style={{ scaleX }} className={classes.progressBar} />
       </div>
 
-      {experiences.map((experience) => {
-        return (
-          <ExperienceSection experience={experience} key={experience.id} />
-        );
-      })}
+      <div className={classes.experiences}>
+        {experiences.map((experience) => {
+          return (
+            <ExperienceSection experience={experience} key={experience.id} />
+          );
+        })}
+      </div>
     </div>
   );
 };

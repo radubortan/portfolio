@@ -1,7 +1,15 @@
+@import "../../../app.scss";
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+
+  @include mobile {
+    height: auto;
+  }
 
   .wrapper {
     padding: 0 37.5px;
@@ -11,6 +19,12 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+
+    @include mobile {
+      flex-direction: column-reverse;
+      padding: 0 10px;
+      gap: 20px;
+    }
 
     .imageContainer {
       flex: 1;
@@ -39,17 +53,17 @@
         gap: 10px;
 
         h2 {
-          font-size: 50px;
+          font-size: var(--extra-big-text);
           line-height: 1;
         }
 
         h3 {
-          font-size: 40px;
+          font-size: var(--big-text);
           color: orange;
         }
 
         p {
-          font-size: 20px;
+          font-size: calc(var(--medium-text) - 2px);
           color: white;
         }
       }
@@ -61,19 +75,21 @@
 
         p {
           color: gray;
-          font-size: 20px;
+          font-size: var(--regular-text);
         }
       }
 
       .skills {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 10px;
 
         span {
           border: 1px solid white;
           padding: 5px;
           border-radius: 5px;
+          font-size: var(--small-text);
         }
       }
     }

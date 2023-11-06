@@ -1,5 +1,15 @@
+@import "../../app.scss";
+
 .container {
   position: relative;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
 
   .progress {
     position: sticky;
@@ -7,12 +17,31 @@
     left: 0;
     padding-top: 10px;
     text-align: center;
+    font-size: var(--big-text);
     color: orange;
-    font-size: 36px;
+
+    @include mobile {
+      position: relative;
+      margin-top: 30px;
+    }
 
     .progressBar {
       height: 10px;
       background-color: white;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  @include mobile {
+    .experiences {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 125px;
     }
   }
 }

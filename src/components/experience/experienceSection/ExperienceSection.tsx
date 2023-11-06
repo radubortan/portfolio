@@ -2,6 +2,7 @@ import classes from "./experienceSection.module.scss";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { Experience } from "../experiences.data";
+import useScreenSize from "../../../hooks/useScreenSize";
 
 const ExperienceSection = ({ experience }: { experience: Experience }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -10,7 +11,10 @@ const ExperienceSection = ({ experience }: { experience: Experience }) => {
     target: ref,
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-100, 100]);
+  const y = useTransform(scrollYProgress, [0, 1], [-200, 200]);
+
+  const screenSize = useScreenSize();
+  const isMobileDevice = screenSize.width <= 768;
 
   return (
     <section key={experience.id} className={classes.container}>
@@ -18,7 +22,10 @@ const ExperienceSection = ({ experience }: { experience: Experience }) => {
         <div className={classes.imageContainer} ref={ref}>
           <img src={experience.image} alt={experience.imageAlt} />
         </div>
-        <motion.div className={classes.textContainer} style={{ y }}>
+        <motion.div
+          className={classes.textContainer}
+          style={{ y: isMobileDevice ? "" : y }}
+        >
           <div className={classes.headers}>
             <h2>{experience.title}</h2>
             <h3>{experience.company}</h3>
