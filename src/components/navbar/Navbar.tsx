@@ -5,7 +5,6 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <Sidebar />
-      <p>Radu Bortan</p>
     </div>
   );
 };
