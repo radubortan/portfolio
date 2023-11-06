@@ -1,10 +1,10 @@
 export const contactVariants = {
   initial: {
-    y: 100,
+    x: -500,
     opacity: 0,
   },
   animate: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
