@@ -32,7 +32,7 @@ a {
 }
 
 section {
-  height: 100dvh;
+  height: 100vh;
   scroll-snap-align: center;
 }
 
@@ -63,6 +63,15 @@ button {
 }
 
 @media (max-width: 738px) {
+  html {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+
+  section {
+    scroll-snap-align: none;
+  }
+
   :root {
     --extra-small-text: 0.85rem;
     --small-text: 1rem;
