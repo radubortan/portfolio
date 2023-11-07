@@ -10,66 +10,68 @@ const Contact = () => {
   const isMobileDevice = screenSize.width <= 768;
 
   return (
-    <motion.div className={classes.container}>
-      <motion.div
-        className={classes.textContainer}
-        variants={
-          isMobileDevice
-            ? variants.contactVariantsMobile
-            : variants.contactVariantsDesktop
-        }
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: isMobileDevice }}
-      >
-        <motion.h1
-          variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
-        >
-          Prenons contact
-        </motion.h1>
+    <div className={classes.container}>
+      <motion.div className={classes.content}>
         <motion.div
-          className={classes.item}
-          variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
+          className={classes.textContainer}
+          variants={
+            isMobileDevice
+              ? variants.contactVariantsMobile
+              : variants.contactVariantsDesktop
+          }
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: isMobileDevice }}
         >
-          <h2>Email</h2>
-          <p>bortanradu@gmail.com</p>
-        </motion.div>
-        <motion.div
-          className={classes.item}
-          variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
-        >
-          <h2>Adresse</h2>
-          <p>Montpellier, France</p>
-        </motion.div>
-        <motion.div
-          className={classes.socialLinks}
-          variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
-        >
-          <motion.a
-            variants={variants.buttonVariants}
-            whileHover="whileHover"
-            href="https://www.linkedin.com/in/radu-bortan/"
-            target="_blank"
+          <motion.h1
+            variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
           >
-            LinkedIn
-          </motion.a>
+            Prenons contact
+          </motion.h1>
+          <motion.div
+            className={classes.item}
+            variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
+          >
+            <h2>Email</h2>
+            <p>bortanradu@gmail.com</p>
+          </motion.div>
+          <motion.div
+            className={classes.item}
+            variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
+          >
+            <h2>Adresse</h2>
+            <p>Montpellier, France</p>
+          </motion.div>
+          <motion.div
+            className={classes.socialLinks}
+            variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
+          >
+            <motion.a
+              variants={variants.buttonVariants}
+              whileHover="whileHover"
+              href="https://www.linkedin.com/in/radu-bortan/"
+              target="_blank"
+            >
+              LinkedIn
+            </motion.a>
 
-          <motion.a
-            variants={variants.buttonVariants}
-            whileHover="whileHover"
-            href="resume.pdf"
-            download="Bortan Radu CV.pdf"
-          >
-            CV
-          </motion.a>
+            <motion.a
+              variants={variants.buttonVariants}
+              whileHover="whileHover"
+              href="resume.pdf"
+              download="Bortan Radu CV.pdf"
+            >
+              CV
+            </motion.a>
+          </motion.div>
         </motion.div>
+
+        <div className={classes.formContainer}>
+          <PhoneSvg />
+          <ContactForm />
+        </div>
       </motion.div>
-
-      <div className={classes.formContainer}>
-        <PhoneSvg />
-        <ContactForm />
-      </div>
-    </motion.div>
+    </div>
   );
 };
 
