@@ -8,7 +8,7 @@
   margin: auto;
 
   @include mobile {
-    background: var(--medium-dark-gradient);
+    background-color: var(--medium-blue);
   }
 
   .content {

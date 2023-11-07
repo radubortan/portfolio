@@ -9,7 +9,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
   }
 
   .progress {
@@ -23,7 +22,7 @@
 
     @include mobile {
       position: relative;
-      margin-top: var(--section-vertical-padding);
+      padding-top: var(--side-padding);
     }
 
     .progressBar {
@@ -42,7 +41,18 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 125px;
+
+      section {
+        padding: var(--side-padding);
+      }
+
+      section:nth-child(even) {
+        background-color: var(--medium-blue);
+      }
+
+      section:nth-child(odd) {
+        background-color: var(--dark-blue);
+      }
     }
   }
 }

@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: center;
 
+  @include mobile {
+    padding-top: var(--side-padding);
+    padding-bottom: var(--side-padding);
+  }
+
   .content {
     max-width: var(--desktop-max-width);
     display: flex;
@@ -13,7 +18,7 @@
 
     @include mobile {
       flex-direction: column;
-      gap: 50px;
+      gap: var(--side-padding);
       width: 100%;
     }
 

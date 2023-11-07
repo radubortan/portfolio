@@ -18,7 +18,7 @@ const Parallax = ({ type }: { type: string }) => {
   const yPlanets = useTransform(
     scrollYProgress,
     [0, 1],
-    [isMobileDevice ? "-40%" : "-20%", isMobileDevice ? "10%" : "30%"]
+    [isMobileDevice ? "-60%" : "-20%", isMobileDevice ? "-20%" : "30%"]
   );
   const yStars = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
@@ -30,10 +30,11 @@ const Parallax = ({ type }: { type: string }) => {
       style={{
         background:
           type === "skills"
-            ? "linear-gradient(180deg, #111132, #0c0c1d)"
-            : "linear-gradient(180deg, #111132, #505064)",
+            ? "linear-gradient(180deg, var(--medium-blue), var(--dark-blue))"
+            : "linear-gradient(180deg, var(--medium-blue), var(--light-blue))",
       }}
     >
+      <div className={classes.spacer}></div>
       <motion.h1 style={{ y: yText }}>
         {type === "skills" ? "Compétences" : "Etudes"}
       </motion.h1>

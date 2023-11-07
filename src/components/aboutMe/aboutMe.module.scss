@@ -8,6 +8,11 @@
   flex-direction: column;
   gap: 40px;
 
+  @include mobile {
+    background: none;
+    background-color: var(--medium-blue);
+  }
+
   .headers {
     display: flex;
     flex-direction: column;

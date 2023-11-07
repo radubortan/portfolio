@@ -9,8 +9,7 @@
   overflow: hidden;
 
   @include mobile {
-    height: 500px;
-    pedding-top: 100px;
+    height: 600px;
   }
 
   h1 {
@@ -55,5 +54,10 @@
     height: 100%;
     position: absolute;
     z-index: 1;
+
+    @include mobile {
+      height: 80%;
+      align-self: flex-end;
+    }
   }
 }

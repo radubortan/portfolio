@@ -16,15 +16,14 @@ export const textVariants = {
   },
 };
 
-export const smallTextVariants = {
-  initial: { x: -200, opacity: 0 },
+export const textVariantsMobile = {
+  initial: {
+    y: 100,
+    opacity: 0,
+  },
   whileInView: {
-    x: 0,
+    y: 0,
     opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 200,
-      damping: 17,
-    },
+    transition: { type: "spring", bounce: 100, damping: 15 },
   },
 };

@@ -38,14 +38,22 @@ const Projects = () => {
         </AnimatePresence>
 
         <div className={classes.titleContainer}>
-          <motion.h1 variants={variants.textVariants}>
+          <motion.h1
+            variants={
+              isMobileDevice
+                ? variants.textVariantsMobile
+                : variants.textVariants
+            }
+          >
             Mes <span>Projets</span>
           </motion.h1>
         </div>
 
         <motion.div
           className={classes.listContainer}
-          variants={variants.textVariants}
+          variants={
+            isMobileDevice ? variants.textVariantsMobile : variants.textVariants
+          }
         >
           {projects.map((project) => {
             return (

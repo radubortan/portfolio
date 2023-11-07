@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 
 const gitHubLinkVariants = {
   initial: {
-    backgroundColor: "#ffffff",
-    color: "#000000",
-    fill: "#000000",
+    backgroundColor: "#eaeaea",
+    color: "#121212",
+    fill: "#121212",
   },
   whileHover: {
-    backgroundColor: "#000000",
-    color: "#ffffff",
-    fill: "#ffffff",
+    backgroundColor: "#121212",
+    color: "#eaeaea",
+    fill: "#eaeaea",
   },
 };
 

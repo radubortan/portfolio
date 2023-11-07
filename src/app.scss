@@ -9,11 +9,13 @@
 
   --orange: #ffa500;
   --gray: #808080;
+  --light-gray: #dadada;
   --white: #eaeaea;
   --black: #121212;
   --red: #ff0000;
   --dark-blue: #0c0c1d;
   --medium-blue: #111132;
+  --light-blue: #505064;
   --giant-text-color: #ffffff09;
   --backdrop-color: #000000e1;
 
@@ -43,7 +45,7 @@ html {
 
 body {
   background-color: var(--dark-blue);
-  color: lightgray;
+  color: var(--white);
 }
 
 a {
@@ -94,6 +96,8 @@ button {
   section {
     height: auto;
     scroll-snap-align: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   :root {
