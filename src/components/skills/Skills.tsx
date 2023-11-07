@@ -16,19 +16,29 @@ const Skills = () => {
             <motion.div
               key={domain.title}
               className={classes.division}
-              variants={variants.divisonVariants}
+              variants={
+                isMobileDevice
+                  ? variants.divisionVariantsMobile
+                  : variants.divisionVariantsDesktop
+              }
               initial="initial"
               whileInView="whileInView"
               viewport={{ once: isMobileDevice }}
             >
               <motion.div
                 className={classes.imageContainer}
-                variants={variants.divisionElementVariants}
+                variants={
+                  isMobileDevice ? {} : variants.divisionElementVariants
+                }
               >
                 <img src={domain.image} alt={domain.imageAlt} />
               </motion.div>
               <div className={classes.h1Container}>
-                <motion.h1 variants={variants.divisionElementVariants}>
+                <motion.h1
+                  variants={
+                    isMobileDevice ? {} : variants.divisionElementVariants
+                  }
+                >
                   {domain.title}
                 </motion.h1>
               </div>
@@ -37,7 +47,9 @@ const Skills = () => {
                   return (
                     <motion.p
                       key={skill}
-                      variants={variants.divisionElementVariants}
+                      variants={
+                        isMobileDevice ? {} : variants.divisionElementVariants
+                      }
                     >
                       {skill}
                     </motion.p>
