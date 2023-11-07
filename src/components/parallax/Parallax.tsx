@@ -18,7 +18,7 @@ const Parallax = ({ type }: { type: string }) => {
   const yPlanets = useTransform(
     scrollYProgress,
     [0, 1],
-    [isMobileDevice ? "-60%" : "-20%", isMobileDevice ? "-20%" : "30%"]
+    [isMobileDevice ? "-40%" : "-20%", isMobileDevice ? "0%" : "30%"]
   );
   const yStars = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 

@@ -9,6 +9,10 @@
   flex-direction: column;
   align-items: center;
 
+  @include mobile {
+    height: 500px;
+  }
+
   .textWrapper {
     width: 100%;
     position: relative;

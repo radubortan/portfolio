@@ -68,6 +68,7 @@
         @include mobile {
           border: 1px solid var(--white);
           border-top: none;
+          max-width: 250px;
         }
 
         &:first-of-type {

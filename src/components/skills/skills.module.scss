@@ -15,11 +15,10 @@
     max-width: var(--desktop-max-width);
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     @include mobile {
-      flex-direction: column;
       gap: var(--side-padding);
-      width: 100%;
     }
 
     .division {
@@ -28,12 +27,12 @@
       align-items: center;
       flex-direction: column;
       border: 1px solid var(--white);
-      padding: 60px;
+      padding: 30px;
       gap: 40px;
 
       @include mobile {
         gap: 20px;
-        padding: 30px;
+        padding: 40px;
       }
 
       .imageContainer {
