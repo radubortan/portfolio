@@ -1,7 +1,6 @@
 @import "../../app.scss";
 
 .container {
-  padding: 0 var(--desktop-side-padding);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +8,6 @@
   margin: auto;
 
   @include mobile {
-    padding: var(--section-vertical-padding) var(--desktop-side-padding);
     background: var(--medium-dark-gradient);
   }
 

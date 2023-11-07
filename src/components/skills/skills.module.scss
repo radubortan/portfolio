@@ -2,14 +2,9 @@
 
 .container {
   background-color: var(--medium-blue);
-  padding: 0 var(--desktop-side-padding);
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @include mobile {
-    padding: var(--mobile-side-padding);
-  }
 
   .content {
     max-width: var(--desktop-max-width);

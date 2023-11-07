@@ -25,7 +25,7 @@ const Parallax = ({ type }: { type: string }) => {
   return (
     <section
       id={type === "skills" ? "skills" : "studies"}
-      className={classes.parallax}
+      className={classes.container}
       ref={ref}
       style={{
         background:

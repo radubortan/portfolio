@@ -12,7 +12,6 @@
   }
 
   .wrapper {
-    padding: 0 var(--desktop-side-padding);
     max-width: var(--desktop-max-width);
     height: 100%;
     display: flex;
@@ -22,7 +21,6 @@
 
     @include mobile {
       flex-direction: column-reverse;
-      padding: 0 var(--mobile-side-padding);
       gap: 20px;
     }
 
