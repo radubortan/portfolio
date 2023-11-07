@@ -1,5 +1,7 @@
+@import "../../app.scss";
+
 .navbar {
-  height: 100px;
+  height: var(--navbar-height);
   display: flex;
   align-items: center;
   justify-content: center;

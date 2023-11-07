@@ -16,7 +16,7 @@ const Projects = () => {
   const isMobileDevice = screenSize.width <= 768;
 
   return (
-    <div className={classes.container}>
+    <section id="projects" className={classes.container}>
       <motion.div
         className={classes.content}
         initial="initial"
@@ -69,7 +69,7 @@ const Projects = () => {
           })}
         </motion.div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

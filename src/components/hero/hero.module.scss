@@ -1,7 +1,7 @@
 @import "../../app.scss";
 
 .container {
-  height: 100vh;
+  height: calc(100vh - var(--navbar-height));
   background: var(--dark-medium-gradient);
   position: relative;
   overflow: hidden;

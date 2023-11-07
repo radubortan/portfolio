@@ -10,7 +10,7 @@ const Contact = () => {
   const isMobileDevice = screenSize.width <= 768;
 
   return (
-    <div className={classes.container}>
+    <section id="contact" className={classes.container}>
       <motion.div className={classes.content}>
         <motion.div
           className={classes.textContainer}
@@ -71,7 +71,7 @@ const Contact = () => {
           <ContactForm />
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

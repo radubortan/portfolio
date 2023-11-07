@@ -23,7 +23,8 @@ const Parallax = ({ type }: { type: string }) => {
   const yStars = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
   return (
-    <div
+    <section
+      id={type === "skills" ? "skills" : "studies"}
       className={classes.parallax}
       ref={ref}
       style={{
@@ -47,7 +48,7 @@ const Parallax = ({ type }: { type: string }) => {
         }}
       />
       <motion.div style={{ x: yStars }} className={classes.stars} />
-    </div>
+    </section>
   );
 };
 

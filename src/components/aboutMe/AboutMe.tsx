@@ -20,7 +20,7 @@ const AboutMe = () => {
   const isMobileDevice = screenSize.width <= 768;
 
   return (
-    <motion.div
+    <motion.section
       variants={containerVariants}
       initial="initial"
       whileInView="whileInView"
@@ -29,6 +29,7 @@ const AboutMe = () => {
         margin: !isMobileDevice ? "-100px" : "",
         once: isMobileDevice,
       }}
+      id="aboutMe"
     >
       <div className={classes.headers}>
         <motion.h1 variants={textVariants}>
@@ -53,7 +54,7 @@ const AboutMe = () => {
         </motion.p>
       </div>
       <motion.img variants={textVariants} src="cat.png" alt="ginger cat icon" />
-    </motion.div>
+    </motion.section>
   );
 };
 

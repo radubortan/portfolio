@@ -9,7 +9,7 @@ const Skills = () => {
   const isMobileDevice = screenSize.width <= 768;
 
   return (
-    <div className={classes.container}>
+    <section className={classes.container}>
       <div className={classes.content}>
         {domains.map((domain) => {
           return (
@@ -60,7 +60,7 @@ const Skills = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

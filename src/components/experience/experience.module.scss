@@ -1,6 +1,7 @@
 @import "../../app.scss";
 
 .container {
+  height: auto;
   position: relative;
 
   @include mobile {
