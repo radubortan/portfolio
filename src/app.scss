@@ -6,6 +6,27 @@
   --big-text: 2rem;
   --extra-big-text: 3rem;
   --ultra-big-text: 5rem;
+
+  --orange: #ffa500;
+  --gray: #808080;
+  --white: #eaeaea;
+  --black: #121212;
+  --red: #ff0000;
+  --dark-blue: #0c0c1d;
+  --medium-blue: #111132;
+  --giant-text-color: #ffffff09;
+  --backdrop-color: #000000e1;
+
+  --dark-medium-gradient: linear-gradient(180deg, #0c0c1d, #111132);
+  --medium-dark-gradient: linear-gradient(180deg, #111132, #0c0c1d);
+
+  --mobile-side-padding: 20px;
+  --section-vertical-padding: 50px;
+  --desktop-side-padding: 37.5px;
+
+  --desktop-max-width: 1366px;
+
+  --border-radius: 5px;
 }
 
 * {
@@ -21,7 +42,7 @@ html {
 }
 
 body {
-  background-color: #0c0c1d;
+  background-color: var(--dark-blue);
   color: lightgray;
 }
 
@@ -80,8 +101,8 @@ button {
   }
 
   #skills {
-    background-color: #111132;
-    padding-top: 100px;
+    background-color: var(--medium-blue);
+    padding-top: var(--section-vertical-padding);
   }
 
   #skills + section {

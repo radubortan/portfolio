@@ -8,9 +8,9 @@
     textarea {
       padding: 15px;
       background-color: transparent;
-      border: 1px solid white;
-      color: white;
-      border-radius: 5px;
+      border: 1px solid var(--white);
+      color: var(--white);
+      border-radius: var(--border-radius);
       font-size: calc(var(--regular-text) - 0.2rem);
     }
   }

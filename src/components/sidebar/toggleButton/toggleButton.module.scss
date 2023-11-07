@@ -1,3 +1,5 @@
+@import "../../../app.scss";
+
 .button {
   width: 60px;
   height: 60px;
@@ -17,7 +19,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 4px;
   }
 }

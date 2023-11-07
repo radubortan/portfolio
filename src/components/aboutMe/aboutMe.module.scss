@@ -2,11 +2,11 @@
 
 .container {
   height: 100%;
-  padding: 0 37.5px;
+  padding: 0 var(--desktop-side-padding);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, #111132, #0c0c1d);
+  background: var(--medium-dark-gradient);
   flex-direction: column;
   gap: 40px;
 
@@ -21,7 +21,7 @@
     h1 {
       text-align: center;
       font-size: var(--extra-big-text);
-      color: orange;
+      color: var(--orange);
     }
 
     h2 {

@@ -1,16 +1,16 @@
 @import "../../app.scss";
 
 .container {
-  height: calc(100vh - 100px);
-  background: linear-gradient(180deg, #0c0c1d, #111132);
+  height: 100vh;
+  background: var(--dark-medium-gradient);
   position: relative;
   overflow: hidden;
 
   .textWrapper {
     position: relative;
     z-index: 2;
-    padding: 0 37.5px;
-    max-width: 1366px;
+    padding: 0 var(--desktop-side-padding);
+    max-width: var(--desktop-max-width);
     height: 100%;
     margin: auto;
     display: flex;
@@ -24,7 +24,7 @@
 
     h2 {
       font-size: var(--big-text);
-      color: orange;
+      color: var(--orange);
       letter-spacing: 10px;
       user-select: none;
     }
@@ -38,7 +38,7 @@
       }
 
       span {
-        color: orange;
+        color: var(--orange);
       }
     }
 
@@ -48,10 +48,10 @@
 
       a {
         padding: 20px;
-        border: 1px solid white;
-        border-radius: 5px;
+        border: 1px solid var(--white);
+        border-radius: var(--border-radius);
         background-color: transparent;
-        color: white;
+        color: var(--white);
         font-weight: 500;
         cursor: pointer;
         font-size: var(--extra-small-text);
@@ -72,7 +72,7 @@
     font-size: 50vh;
     bottom: -120px;
     white-space: nowrap;
-    color: #ffffff09;
+    color: var(--giant-text-color);
     font-weight: bold;
     z-index: 0;
     user-select: none;
