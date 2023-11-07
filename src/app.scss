@@ -72,7 +72,17 @@ button {
     scroll-snap-align: none;
   }
 
-  #projects {
+  #projects,
+  #skills {
+    height: auto;
+  }
+
+  #skills {
+    background-color: #111132;
+    padding-top: 100px;
+  }
+
+  #skills + section {
     height: auto;
   }
 

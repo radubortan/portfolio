@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import classes from "./parallax.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
+import useScreenSize from "../../hooks/useScreenSize";
 
 const Parallax = ({ type }: { type: string }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -10,8 +11,15 @@ const Parallax = ({ type }: { type: string }) => {
     offset: ["0 1", "end start"],
   });
 
-  const yText = useTransform(scrollYProgress, [0, 1], ["-200%", "200%"]);
-  const yPlantes = useTransform(scrollYProgress, [0, 1], ["-20%", "30%"]);
+  const screenSize = useScreenSize();
+  const isMobileDevice = screenSize.width <= 768;
+
+  const yText = useTransform(scrollYProgress, [0, 1], ["-300%", "300%"]);
+  const yPlanets = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [isMobileDevice ? "-40%" : "-20%", isMobileDevice ? "10%" : "30%"]
+  );
   const yStars = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
   return (
@@ -32,7 +40,7 @@ const Parallax = ({ type }: { type: string }) => {
       <motion.div
         className={classes.planets}
         style={{
-          y: yPlantes,
+          y: yPlanets,
           backgroundImage: `url(${
             type === "skills" ? "planets.png" : "sun.png"
           })`,

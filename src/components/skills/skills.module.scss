@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .container {
   background-color: #111132;
   padding: 0 37.5px;
@@ -6,10 +8,20 @@
   align-items: center;
   justify-content: center;
 
+  @include mobile {
+    padding: 50px;
+  }
+
   .content {
     max-width: 1366px;
     display: flex;
     justify-content: center;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 50px;
+      width: 100%;
+    }
 
     .division {
       flex: 1;
@@ -19,6 +31,11 @@
       border: 1px solid white;
       padding: 60px;
       gap: 40px;
+
+      @include mobile {
+        gap: 20px;
+        padding: 30px;
+      }
 
       .imageContainer {
         height: 70px;
@@ -36,9 +53,12 @@
         align-items: center;
         height: 80px;
 
-        h1 {
-          font-size: 30px;
+        @include mobile {
+          height: auto;
+        }
 
+        h1 {
+          font-size: var(--big-text);
           text-align: center;
         }
       }
@@ -49,7 +69,7 @@
         gap: 15px;
 
         p {
-          font-size: 20px;
+          font-size: var(--regular-text);
           border-radius: 5px;
           width: 150px;
           text-align: center;

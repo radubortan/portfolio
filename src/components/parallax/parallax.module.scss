@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .parallax {
   width: 100%;
   height: 100%;
@@ -7,8 +9,13 @@
   justify-content: center;
   overflow: hidden;
 
+  @include mobile {
+    height: 500px;
+    pedding-top: 100px;
+  }
+
   h1 {
-    font-size: 100px;
+    font-size: var(--ultra-big-text);
     z-index: 3;
   }
 
@@ -20,6 +27,11 @@
     height: 100%;
     position: absolute;
     z-index: 4;
+
+    @include mobile {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 
   .planets {
@@ -29,6 +41,11 @@
     height: 100%;
     position: absolute;
     z-index: 2;
+
+    @include mobile {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 
   .stars {

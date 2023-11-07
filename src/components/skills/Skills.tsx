@@ -1,16 +1,21 @@
 import classes from "./skills.module.scss";
 import { motion } from "framer-motion";
 import * as variants from "./skills.variants";
+import useScreenSize from "../../hooks/useScreenSize";
 
 const Skills = () => {
+  const screenSize = useScreenSize();
+  const isMobileDevice = screenSize.width <= 768;
+
   return (
-    <motion.div className={classes.container}>
+    <div className={classes.container}>
       <div className={classes.content}>
         <motion.div
           className={classes.division}
           variants={variants.divisonVariants}
           initial="initial"
           whileInView="whileInView"
+          viewport={{ once: isMobileDevice }}
         >
           <motion.div
             className={classes.imageContainer}
@@ -47,6 +52,7 @@ const Skills = () => {
           variants={variants.divisonVariants}
           initial="initial"
           whileInView="whileInView"
+          viewport={{ once: isMobileDevice }}
         >
           <motion.div
             variants={variants.divisionElementVariants}
@@ -80,6 +86,7 @@ const Skills = () => {
           variants={variants.divisonVariants}
           initial="initial"
           whileInView="whileInView"
+          viewport={{ once: isMobileDevice }}
         >
           <motion.div
             variants={variants.divisionElementVariants}
@@ -111,6 +118,7 @@ const Skills = () => {
           variants={variants.divisonVariants}
           initial="initial"
           whileInView="whileInView"
+          viewport={{ once: isMobileDevice }}
         >
           <motion.div
             variants={variants.divisionElementVariants}
@@ -137,7 +145,7 @@ const Skills = () => {
           </div>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
