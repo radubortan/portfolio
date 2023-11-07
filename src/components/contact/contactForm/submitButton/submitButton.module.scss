@@ -1,3 +1,5 @@
+@import "../../../../app.scss";
+
 .button {
   padding: 20px;
   border: none;
@@ -10,9 +12,13 @@
   position: relative;
   color: black;
 
+  @include mobile {
+    height: 50px;
+  }
+
   p {
     font-weight: 500;
-    font-size: 18px;
+    font-size: var(--regular-text);
   }
 
   .errorMessage {
