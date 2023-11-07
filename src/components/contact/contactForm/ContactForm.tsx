@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import * as variants from "./contactForm.variants";
 import classes from "./contactForm.module.scss";
 import SubmitButton from "./submitButton/SubmitButton";
+import useScreenSize from "../../../hooks/useScreenSize";
 
 export enum FormState {
   IDLE = "idle",
@@ -13,6 +14,9 @@ export enum FormState {
 }
 
 const ContactForm = () => {
+  const screenSize = useScreenSize();
+  const isMobileDevice = screenSize.width <= 768;
+
   const formRef = useRef<HTMLFormElement>(null);
 
   const [formState, setFormState] = useState<FormState>(FormState.IDLE);
@@ -43,12 +47,13 @@ const ContactForm = () => {
         opacity: 1,
         transition: { opacity: { duration: 1 } },
       }}
+      viewport={{ once: isMobileDevice }}
     >
       <motion.form
         ref={formRef}
         onSubmit={sendEmail}
         autoComplete="off"
-        variants={variants.formVariants}
+        variants={isMobileDevice ? {} : variants.formVariants}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}

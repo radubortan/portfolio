@@ -1,4 +1,4 @@
-export const contactVariants = {
+export const contactVariantsDesktop = {
   initial: {
     x: -500,
     opacity: 0,
@@ -11,6 +11,15 @@ export const contactVariants = {
       type: "spring",
       stiffness: 50,
     },
+  },
+};
+
+export const contactVariantsMobile = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
   },
 };
 

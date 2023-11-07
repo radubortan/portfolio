@@ -3,37 +3,47 @@ import { motion } from "framer-motion";
 import * as variants from "./contact.variants.ts";
 import PhoneSvg from "./phoneSvg/PhoneSvg.tsx";
 import ContactForm from "./contactForm/ContactForm.tsx";
-import classNames from "classnames";
+import useScreenSize from "../../hooks/useScreenSize.ts";
 
 const Contact = () => {
+  const screenSize = useScreenSize();
+  const isMobileDevice = screenSize.width <= 768;
+
   return (
     <motion.div className={classes.container}>
       <motion.div
         className={classes.textContainer}
-        variants={variants.contactVariants}
+        variants={
+          isMobileDevice
+            ? variants.contactVariantsMobile
+            : variants.contactVariantsDesktop
+        }
         initial="initial"
         whileInView="animate"
+        viewport={{ once: isMobileDevice }}
       >
-        <motion.h1 variants={variants.contactVariants}>
+        <motion.h1
+          variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
+        >
           Prenons contact
         </motion.h1>
         <motion.div
           className={classes.item}
-          variants={variants.contactVariants}
+          variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
         >
           <h2>Email</h2>
           <p>bortanradu@gmail.com</p>
         </motion.div>
         <motion.div
           className={classes.item}
-          variants={variants.contactVariants}
+          variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
         >
           <h2>Adresse</h2>
           <p>Montpellier, France</p>
         </motion.div>
         <motion.div
-          className={classNames(classes.item, classes.socialLinks)}
-          variants={variants.contactVariants}
+          className={classes.socialLinks}
+          variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
         >
           <motion.a
             variants={variants.buttonVariants}
