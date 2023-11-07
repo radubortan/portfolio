@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .container {
   height: 100%;
   padding: 0 37.5px;
@@ -15,6 +17,11 @@
     justify-content: center;
     gap: 40px;
 
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+    }
+
     .headers {
       flex: 1;
       display: flex;
@@ -22,13 +29,22 @@
       gap: 20px;
       text-align: right;
 
+      @include mobile {
+        text-align: center;
+        gap: 10px;
+      }
+
       h1 {
-        font-size: 50px;
+        font-size: var(--extra-big-text);
         color: orange;
       }
 
       h2 {
-        font-size: 30px;
+        font-size: var(--big-text);
+      }
+
+      h3 {
+        font-size: var(--regular-text);
       }
     }
 
@@ -37,10 +53,17 @@
       width: 1px;
       display: flex;
       align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        height: 1px;
+        width: 100%;
+      }
 
       span {
         background-color: white;
         width: 100%;
+        height: 100%;
       }
     }
 
@@ -51,7 +74,11 @@
       flex: 1;
 
       p {
-        font-size: 30px;
+        font-size: var(--medium-text);
+
+        @include mobile {
+          text-align: center;
+        }
       }
     }
 
@@ -62,6 +89,10 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
+
+      @include mobile {
+        top: -80px;
+      }
 
       img {
         height: 50px;
@@ -78,6 +109,10 @@
       cursor: pointer;
       user-select: none;
       font-weight: 500;
+
+      @include mobile {
+        bottom: -80px;
+      }
     }
   }
 }

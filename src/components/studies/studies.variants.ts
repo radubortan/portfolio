@@ -1,6 +1,7 @@
 export const textVariants = {
-  initial: { opacity: 0, x: 400 },
+  initial: { opacity: 0 },
   whileInView: {
+    y: 0,
     x: 0,
     opacity: 1,
     transition: {
@@ -13,7 +14,7 @@ export const textVariants = {
   },
 };
 
-export const dividerVariants = {
+export const dividerVariantsDesktop = {
   initial: {
     height: 0,
   },
@@ -23,9 +24,19 @@ export const dividerVariants = {
   },
 };
 
+export const dividerVariantsMobile = {
+  initial: {
+    width: 0,
+  },
+  whileInView: {
+    width: "100%",
+    transition: { ease: "easeOut", duration: 0.5 },
+  },
+};
+
 export const schoolVariants = {
   initial: { opacity: 0 },
-  whileInView: { opacity: 1, y: 0, transition: { y: { duration: 0.5 } } },
+  whileInView: { opacity: 1, y: 0, x: 0, transition: { y: { duration: 0.5 } } },
   whileHover: { scale: 1.05 },
   whileTap: { scale: 1 },
 };

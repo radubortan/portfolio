@@ -1,26 +1,40 @@
 import classes from "./studies.module.scss";
 import { motion } from "framer-motion";
 import * as variants from "./studies.variants";
+import useScreenSize from "../../hooks/useScreenSize";
 
 const Studies = () => {
+  const screenSize = useScreenSize();
+  const isMobileDevice = screenSize.width <= 768;
+
   return (
     <div className={classes.container}>
       <div className={classes.content}>
         <motion.div
           className={classes.imageContainer}
           whileInView="whileInView"
-          initial={{ ...variants.schoolVariants.initial, y: 100 }}
+          initial={
+            isMobileDevice
+              ? { ...variants.schoolVariants.initial, x: 100 }
+              : { ...variants.schoolVariants.initial, y: 100 }
+          }
           variants={variants.schoolVariants}
           transition={{ opacity: { duration: 1 } }}
+          viewport={{ once: isMobileDevice }}
         >
           <img src="polytech.png" alt="Polytech logo" />
         </motion.div>
 
         <motion.div
           variants={variants.textVariants}
-          initial={{ ...variants.textVariants.initial, x: -400 }}
+          initial={
+            isMobileDevice
+              ? { ...variants.textVariants.initial, x: -100 }
+              : { ...variants.textVariants.initial, x: -400 }
+          }
           whileInView="whileInView"
           className={classes.headers}
+          viewport={{ once: isMobileDevice }}
         >
           <h1>
             Diplôme d'Ingénieur <br />
@@ -32,17 +46,27 @@ const Studies = () => {
 
         <div className={classes.divider}>
           <motion.span
-            variants={variants.dividerVariants}
+            variants={
+              isMobileDevice
+                ? variants.dividerVariantsMobile
+                : variants.dividerVariantsDesktop
+            }
             initial="initial"
             whileInView="whileInView"
+            viewport={{ once: isMobileDevice }}
           />
         </div>
 
         <motion.div
           className={classes.text}
           variants={variants.textVariants}
-          initial={{ ...variants.textVariants.initial, x: 400 }}
+          initial={
+            isMobileDevice
+              ? { ...variants.textVariants.initial, x: 100 }
+              : { ...variants.textVariants.initial, x: 400 }
+          }
           whileInView="whileInView"
+          viewport={{ once: isMobileDevice }}
         >
           <p>
             Mes études m'ont permis de découvrir les différentes facettes de
@@ -59,11 +83,16 @@ const Studies = () => {
           whileTap="whileTap"
           whileHover="whileHover"
           whileInView="whileInView"
-          initial={{ ...variants.schoolVariants.initial, y: -100 }}
+          initial={
+            isMobileDevice
+              ? { ...variants.schoolVariants.initial, x: -100 }
+              : { ...variants.schoolVariants.initial, y: -100 }
+          }
           variants={variants.schoolVariants}
           transition={{ scale: { duration: 0.2 }, opacity: { duration: 1 } }}
           href="https://www.polytech.umontpellier.fr/formation/cycle-ingenieur/informatique-et-gestion"
           target="_blank"
+          viewport={{ once: isMobileDevice }}
         >
           Site école
         </motion.a>
