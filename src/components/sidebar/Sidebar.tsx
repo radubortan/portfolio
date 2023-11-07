@@ -14,7 +14,7 @@ const Sidebar = () => {
         <div
           className={classes.backdrop}
           onClick={() => {
-            setOpen((prev) => !prev);
+            setOpen(false);
           }}
         />
       )}
@@ -22,7 +22,7 @@ const Sidebar = () => {
         className={classes.background}
         variants={variants.sidebarVariants}
       >
-        <Links />
+        <Links onClick={() => setOpen(false)} />
       </motion.div>
       <ToggleButton
         onClick={() => {

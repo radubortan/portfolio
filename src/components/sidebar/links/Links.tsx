@@ -12,12 +12,13 @@ const items: { id: string; title: string }[] = [
   { id: "contact", title: "Contact" },
 ];
 
-const Links = () => {
+const Links = ({ onClick }: { onClick: () => void }) => {
   return (
     <motion.div className={classes.links} variants={variants.wrapperVariants}>
       {items.map((item) => {
         return (
           <motion.a
+            onClick={onClick}
             href={`#${item.id}`}
             key={item.id}
             variants={variants.itemVariants}
