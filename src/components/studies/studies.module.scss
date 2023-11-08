@@ -81,6 +81,7 @@
         padding-right: var(--side-padding);
 
         @include mobile {
+          padding-right: 0;
           text-align: center;
         }
       }
