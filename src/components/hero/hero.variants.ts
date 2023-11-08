@@ -3,7 +3,7 @@ import { Variants } from "framer-motion";
 export const wrapperVariants = {
   animate: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -18,8 +18,8 @@ export const textVariants = {
     opacity: 1,
     transition: {
       type: "spring",
-      stiffness: 40,
-      damping: 9,
+      stiffness: 100,
+      damping: 11,
       duration: 1,
     },
   },
