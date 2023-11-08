@@ -2,6 +2,7 @@ import { useRef } from "react";
 import classes from "./parallax.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 import useScreenSize from "../../hooks/useScreenSize";
+import classNames from "classnames";
 
 const Parallax = ({ type }: { type: string }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -38,7 +39,6 @@ const Parallax = ({ type }: { type: string }) => {
             : "linear-gradient(180deg, var(--medium-blue), var(--light-blue))",
       }}
     >
-      <div className={classes.spacer}></div>
       <motion.h1 style={{ y: yText }}>
         {type === "skills" ? "Compétences" : "Etudes"}
       </motion.h1>
@@ -52,7 +52,13 @@ const Parallax = ({ type }: { type: string }) => {
           })`,
         }}
       />
-      <motion.div style={{ x: yStars }} className={classes.stars} />
+      <motion.div
+        style={{ x: yStars }}
+        className={classNames(
+          classes.stars,
+          type === "skills" && classes.skillsStars
+        )}
+      />
     </section>
   );
 };

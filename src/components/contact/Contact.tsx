@@ -8,6 +8,7 @@ import useScreenSize from "../../hooks/useScreenSize.ts";
 const Contact = () => {
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
+  const isTablet = screenSize.width > 768 && screenSize.width <= 1024;
 
   return (
     <section id="contact" className={classes.container}>
@@ -15,7 +16,7 @@ const Contact = () => {
         <motion.div
           className={classes.textContainer}
           variants={
-            isMobileDevice
+            isMobileDevice || isTablet
               ? variants.contactVariantsMobile
               : variants.contactVariantsDesktop
           }
@@ -24,27 +25,35 @@ const Contact = () => {
           viewport={{ once: isMobileDevice }}
         >
           <motion.h1
-            variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
+            variants={
+              isMobileDevice || isTablet ? {} : variants.contactVariantsDesktop
+            }
           >
             Prenons contact
           </motion.h1>
           <motion.div
             className={classes.item}
-            variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
+            variants={
+              isMobileDevice || isTablet ? {} : variants.contactVariantsDesktop
+            }
           >
             <h2>Email</h2>
             <p>bortanradu@gmail.com</p>
           </motion.div>
           <motion.div
             className={classes.item}
-            variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
+            variants={
+              isMobileDevice || isTablet ? {} : variants.contactVariantsDesktop
+            }
           >
             <h2>Adresse</h2>
             <p>Montpellier, France</p>
           </motion.div>
           <motion.div
             className={classes.socialLinks}
-            variants={isMobileDevice ? {} : variants.contactVariantsDesktop}
+            variants={
+              isMobileDevice || isTablet ? {} : variants.contactVariantsDesktop
+            }
           >
             <motion.a
               variants={variants.buttonVariants}

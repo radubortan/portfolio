@@ -75,4 +75,10 @@
       align-self: flex-end;
     }
   }
+
+  .skillsStars {
+    @include mobile {
+      height: 100%;
+    }
+  }
 }
