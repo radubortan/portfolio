@@ -77,6 +77,10 @@
         p {
           color: var(--light-gray);
           font-size: var(--regular-text);
+
+          @include tablet {
+            font-size: calc(var(--regular-text) + 0.1rem);
+          }
         }
       }
 

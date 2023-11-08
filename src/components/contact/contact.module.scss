@@ -22,6 +22,12 @@
       gap: 50px;
     }
 
+    @include tablet {
+      flex-direction: column;
+      justify-content: center;
+      gap: 100px;
+    }
+
     .textContainer {
       flex: 1;
       display: flex;
@@ -34,11 +40,23 @@
         flex: none;
       }
 
+      @include tablet {
+        flex: none;
+        align-items: center;
+        gap: 20px;
+      }
+
       h1 {
         font-size: calc(var(--ultra-big-text) + 1rem);
         line-height: 88px;
 
         @include mobile {
+          font-size: var(--ultra-big-text);
+          line-height: 1;
+          text-align: center;
+        }
+
+        @include tablet {
           font-size: var(--ultra-big-text);
           line-height: 1;
           text-align: center;
@@ -66,10 +84,21 @@
           gap: 20px;
         }
 
+        @include tablet {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+        }
+
         p {
           font-weight: 300;
 
           @include mobile {
+            font-size: var(--medium-text);
+          }
+
+          @include tablet {
             font-size: var(--medium-text);
           }
         }
@@ -87,17 +116,35 @@
           color: var(--white);
           font-weight: 500;
           font-size: var(--extra-small-text);
+
+          @include mobile {
+            width: 100px;
+            text-align: center;
+          }
+
+          @include tablet {
+            width: 100px;
+            text-align: center;
+          }
         }
       }
     }
 
     .formContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex: 1;
       position: relative;
 
       @include mobile {
         flex: none;
         width: 100%;
+      }
+
+      @include tablet {
+        flex: none;
+        width: clamp(400px, 100%, 700px);
       }
     }
   }

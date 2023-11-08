@@ -15,6 +15,10 @@
   h1 {
     font-size: var(--ultra-big-text);
     z-index: 3;
+
+    @include tablet {
+      font-size: calc(var(--ultra-big-text) + 1rem);
+    }
   }
 
   .mountains {
@@ -27,6 +31,11 @@
     z-index: 4;
 
     @include mobile {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    @include tablet {
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -43,6 +52,12 @@
     @include mobile {
       background-size: contain;
       background-repeat: no-repeat;
+    }
+
+    @include tablet {
+      background-size: contain;
+      background-repeat: no-repeat;
+      bottom: 200px;
     }
   }
 

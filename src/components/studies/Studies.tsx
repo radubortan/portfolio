@@ -6,6 +6,7 @@ import useScreenSize from "../../hooks/useScreenSize";
 const Studies = () => {
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
+  const isTablet = screenSize.width > 768 && screenSize.width <= 1024;
 
   return (
     <section className={classes.container}>
@@ -30,6 +31,8 @@ const Studies = () => {
           initial={
             isMobileDevice
               ? { ...variants.textVariants.initial, x: -100 }
+              : isTablet
+              ? { ...variants.textVariants.initial, x: -200 }
               : { ...variants.textVariants.initial, x: -400 }
           }
           whileInView="whileInView"
@@ -63,6 +66,8 @@ const Studies = () => {
           initial={
             isMobileDevice
               ? { ...variants.textVariants.initial, x: 100 }
+              : isTablet
+              ? { ...variants.textVariants.initial, x: 200 }
               : { ...variants.textVariants.initial, x: 400 }
           }
           whileInView="whileInView"

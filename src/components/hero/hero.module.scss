@@ -36,7 +36,7 @@
     }
 
     h1 {
-      font-size: var(--ultra-big-text);
+      font-size: calc(var(--ultra-big-text) + 1rem);
       user-select: none;
 
       @include mobile {
@@ -84,8 +84,13 @@
     user-select: none;
 
     @include mobile {
-      font-size: 30vh;
+      font-size: 200px;
       bottom: -50px;
+    }
+
+    @include tablet {
+      font-size: 300px;
+      bottom: 50px;
     }
   }
 }

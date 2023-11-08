@@ -13,12 +13,16 @@ const Parallax = ({ type }: { type: string }) => {
 
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
+  const isTablet = screenSize.width > 768 && screenSize.width <= 1024;
 
   const yText = useTransform(scrollYProgress, [0, 1], ["-300%", "300%"]);
   const yPlanets = useTransform(
     scrollYProgress,
     [0, 1],
-    [isMobileDevice ? "-40%" : "-20%", isMobileDevice ? "0%" : "30%"]
+    [
+      isMobileDevice ? "-40%" : isTablet ? "-30%" : "-20%",
+      isMobileDevice ? "0%" : isTablet ? "20%" : "30%",
+    ]
   );
   const yStars = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 

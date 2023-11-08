@@ -16,6 +16,10 @@
     height: 50px;
   }
 
+  @include tablet {
+    height: 50px;
+  }
+
   p {
     font-weight: 500;
     font-size: var(--regular-text);

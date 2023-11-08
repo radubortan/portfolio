@@ -21,6 +21,13 @@
       gap: var(--side-padding);
     }
 
+    @include tablet {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
     .division {
       flex: 1;
       display: flex;
@@ -33,6 +40,11 @@
       @include mobile {
         gap: 20px;
         padding: 40px;
+      }
+
+      @include tablet {
+        gap: 10px;
+        padding: 20px;
       }
 
       .imageContainer {
@@ -52,6 +64,10 @@
         height: 80px;
 
         @include mobile {
+          height: auto;
+        }
+
+        @include tablet {
           height: auto;
         }
 

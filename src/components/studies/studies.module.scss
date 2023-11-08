@@ -78,6 +78,7 @@
 
       p {
         font-size: var(--medium-text);
+        padding-right: var(--side-padding);
 
         @include mobile {
           text-align: center;
