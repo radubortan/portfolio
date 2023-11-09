@@ -49,7 +49,7 @@ function App() {
     if (nonInitialBreakpoints.includes(currentBreakpoint)) {
       timer = setTimeout(() => {
         window.location.reload();
-      }, 1000);
+      }, 500);
     }
   };
 
