@@ -1,8 +1,11 @@
 @import "../../app.scss";
 
 .navbar {
+  padding: 0 var(--side-padding);
+  margin: auto;
+  max-width: var(--desktop-max-width);
   height: var(--navbar-height);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }

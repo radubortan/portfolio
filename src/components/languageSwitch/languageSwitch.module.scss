@@ -1,0 +1,23 @@
+@import "../../app.scss";
+
+.container {
+  display: flex;
+  gap: 10px;
+
+  button {
+    font-size: var(--extra-small-text);
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .divider {
+    width: 1px;
+    background-color: var(--white);
+  }
+
+  .active {
+    color: var(--orange);
+  }
+}
