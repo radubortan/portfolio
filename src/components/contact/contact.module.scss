@@ -25,8 +25,7 @@
     @include tablet {
       flex-direction: column;
       justify-content: center;
-      gap: clamp(10px, 3vh, 100px);
-      padding-bottom: var(--side-padding);
+      gap: clamp(40px, 5vh, 100px);
     }
 
     .textContainer {
