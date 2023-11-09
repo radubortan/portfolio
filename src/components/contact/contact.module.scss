@@ -93,8 +93,6 @@
         }
 
         p {
-          font-weight: 300;
-
           @include mobile {
             font-size: var(--medium-text);
           }
