@@ -7,7 +7,7 @@ import useScreenSize from "../../hooks/useScreenSize.ts";
 import { useTranslation } from "react-i18next";
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
@@ -70,8 +70,14 @@ const Contact = () => {
             <motion.a
               variants={variants.buttonVariants}
               whileHover="whileHover"
-              href="resume.pdf"
-              download="Bortan Radu CV.pdf"
+              href={
+                i18n.language === "fr-FR" ? "cv_francais.pdf" : "cv_english.pdf"
+              }
+              download={
+                i18n.language === "fr-FR"
+                  ? "Bortan Radu CV Francais.pdf"
+                  : "Bortan Radu CV English.pdf"
+              }
             >
               CV
             </motion.a>
