@@ -6,8 +6,11 @@ import ProjectModal from "./projectModal/ProjectModal";
 import { projects } from "./projects.data";
 import { Project } from "./projects.data";
 import useScreenSize from "../../hooks/useScreenSize";
+import { Trans, useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const { t } = useTranslation();
+
   const [selectedProject, setSelectedProject] = useState<Project>();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,7 +48,9 @@ const Projects = () => {
                 : variants.textVariants
             }
           >
-            Mes <span>Projets</span>
+            <Trans i18nKey="MY_PROJECTS_HTML">
+              <span></span>
+            </Trans>
           </motion.h1>
         </div>
 
@@ -70,8 +75,8 @@ const Projects = () => {
                   setSelectedProject(project);
                 }}
               >
-                <h2>{project.title}</h2>
-                <p className={classes.learnMore}>Plus d'infos</p>
+                <h2>{t(project.title)}</h2>
+                <p className={classes.learnMore}>{t("MORE_INFO")}</p>
               </motion.div>
             );
           })}

@@ -2,8 +2,11 @@ import classes from "./studies.module.scss";
 import { motion } from "framer-motion";
 import * as variants from "./studies.variants";
 import useScreenSize from "../../hooks/useScreenSize";
+import { Trans, useTranslation } from "react-i18next";
 
 const Studies = () => {
+  const { t } = useTranslation();
+
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
   const isTablet = screenSize.width > 768 && screenSize.width <= 1024;
@@ -40,8 +43,9 @@ const Studies = () => {
           viewport={{ once: isMobileDevice }}
         >
           <h1>
-            Diplôme d'Ingénieur <br />
-            en Informatique
+            <Trans i18nKey="ENGINEERING_DEGREE">
+              <span></span>
+            </Trans>
           </h1>
           <h2>Polytech Montpellier</h2>
           <h3>2018 - 2023</h3>
@@ -73,15 +77,8 @@ const Studies = () => {
           whileInView="whileInView"
           viewport={{ once: isMobileDevice }}
         >
-          <p>
-            Mes études m'ont permis de découvrir les différentes facettes de
-            l'informatique, comme le développement web, l'IoT, le génie logiciel
-            ou les bases de données.
-          </p>
-          <p>
-            Cette vision globale m'a doté d'une grande flexibilité pour
-            m'adapter aisément à divers projets.
-          </p>
+          <p>{t("STUDIES_1")}</p>
+          <p>{t("STUDIES_2")}</p>
         </motion.div>
 
         <motion.a
@@ -99,7 +96,7 @@ const Studies = () => {
           target="_blank"
           viewport={{ once: isMobileDevice }}
         >
-          Site école
+          {t("SCHOOL_WEBSITE")}
         </motion.a>
       </div>
     </section>

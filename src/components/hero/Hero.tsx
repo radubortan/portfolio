@@ -1,8 +1,11 @@
 import classes from "./hero.module.scss";
 import { motion } from "framer-motion";
 import * as variants from "./hero.variants";
+import { Trans, useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={classes.container}>
       <motion.div
@@ -13,8 +16,9 @@ const Hero = () => {
       >
         <motion.h2 variants={variants.textVariants}>RADU BORTAN</motion.h2>
         <motion.h1 variants={variants.textVariants}>
-          Ingénieur <br />
-          <span>Full-Stack</span>
+          <Trans i18nKey="FULL_STACK_ENGINEER_HTML">
+            <span></span>
+          </Trans>
         </motion.h1>
         <div className={classes.buttons}>
           <motion.a
@@ -22,14 +26,14 @@ const Hero = () => {
             variants={variants.textVariants}
             href="#experience"
           >
-            Mon Expérience
+            {t("MY_EXPERIENCE")}
           </motion.a>
           <motion.a
             href="#contact"
             variants={variants.textVariants}
             whileHover={variants.buttonVariants.whileHover}
           >
-            Prendre Contact
+            {t("GET_IN_TOUCH")}
           </motion.a>
         </div>
         <motion.div variants={variants.textVariants}>
@@ -46,7 +50,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Ingénieur Full-Stack
+        {t("FULL_STACK_ENGINEER")}
       </motion.div>
     </div>
   );

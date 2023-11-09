@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import * as variants from "./skills.variants";
 import useScreenSize from "../../hooks/useScreenSize";
 import { domains } from "./skills.data";
+import { useTranslation } from "react-i18next";
 
 const Skills = () => {
+  const { t } = useTranslation();
+
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
 
@@ -39,7 +42,7 @@ const Skills = () => {
                     isMobileDevice ? {} : variants.divisionElementVariants
                   }
                 >
-                  {domain.title}
+                  {t(domain.title)}
                 </motion.h1>
               </div>
               <div className={classes.list}>

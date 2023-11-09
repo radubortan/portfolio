@@ -5,6 +5,7 @@ import * as variants from "./contactForm.variants";
 import classes from "./contactForm.module.scss";
 import SubmitButton from "./submitButton/SubmitButton";
 import useScreenSize from "../../../hooks/useScreenSize";
+import { useTranslation } from "react-i18next";
 
 export enum FormState {
   IDLE = "idle",
@@ -14,6 +15,8 @@ export enum FormState {
 }
 
 const ContactForm = () => {
+  const { t } = useTranslation();
+
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
 
@@ -58,7 +61,7 @@ const ContactForm = () => {
         whileInView="animate"
         viewport={{ once: true }}
       >
-        <input type="text" placeholder="Nom" required name="name" />
+        <input type="text" placeholder={t("NAME")} required name="name" />
         <input type="email" placeholder="Email" required name="email" />
         <textarea name="message" placeholder="Message" rows={8} />
         <SubmitButton formState={formState} />

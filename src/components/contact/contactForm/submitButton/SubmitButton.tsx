@@ -3,6 +3,7 @@ import Checkmark from "./checkmark/Checkmark";
 import Loader from "./loader/Loader";
 import classes from "./submitButton.module.scss";
 import { FormState } from "../ContactForm";
+import { useTranslation } from "react-i18next";
 
 export const buttonVariants = {
   whileHover: {
@@ -12,6 +13,8 @@ export const buttonVariants = {
 };
 
 const SubmitButton = ({ formState }: { formState: FormState }) => {
+  const { t } = useTranslation();
+
   const isIdle = formState === FormState.IDLE;
   const isLoading = formState === FormState.LOADING;
   const isSuccess = formState === FormState.SUCCESS;
@@ -34,7 +37,7 @@ const SubmitButton = ({ formState }: { formState: FormState }) => {
       <AnimatePresence mode="wait">
         {isIdle && (
           <motion.p exit={{ opacity: 0, transition: { duration: 0.3 } }}>
-            Envoyer
+            {t("SEND")}
           </motion.p>
         )}
         {isLoading && <Loader />}
@@ -47,7 +50,7 @@ const SubmitButton = ({ formState }: { formState: FormState }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          Il y a eu une erreur. Réessayer.
+          {t("ERROR_RETRY")}
         </motion.p>
       )}
     </motion.button>

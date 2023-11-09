@@ -1,6 +1,7 @@
 import classes from "./aboutMe.module.scss";
 import { motion } from "framer-motion";
 import useScreenSize from "../../hooks/useScreenSize";
+import { useTranslation } from "react-i18next";
 
 const containerVariants = {
   whileInView: { transition: { staggerChildren: 0.05 } },
@@ -16,6 +17,8 @@ const textVariants = {
 };
 
 const AboutMe = () => {
+  const { t } = useTranslation();
+
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
 
@@ -32,26 +35,17 @@ const AboutMe = () => {
       id="aboutMe"
     >
       <div className={classes.headers}>
-        <motion.h1 variants={textVariants}>
-          Bonjour, je m'appelle Radu!
-        </motion.h1>
-        <motion.h2 variants={textVariants}>Ingénieur Full-Stack</motion.h2>
+        <motion.h1 variants={textVariants}>{t("HELLO_MY_NAME")}</motion.h1>
+        <motion.h2 variants={textVariants}>
+          {" "}
+          {t("FULL_STACK_ENGINEER")}
+        </motion.h2>
       </div>
 
       <div className={classes.smallTextContainer}>
-        <motion.p variants={textVariants}>
-          J'adore collaborer sur des projets ayant un impact. J'ai une affection
-          particulière pour le développement front-end et l'UI/UX.
-        </motion.p>
-        <motion.p variants={textVariants}>
-          Je suis actuellement à la recherche d'un poste de développeur
-          full-stack. Si vous avez un projet intéressant, n'hésitez pas à me
-          contacter!
-        </motion.p>
-        <motion.p variants={textVariants}>
-          En dehors du travail, j'aime suivre les sports mécaniques, découvrir
-          les derniers gadgets et jouer avec mon chat.
-        </motion.p>
+        <motion.p variants={textVariants}>{t("ABOUT_ME_1")}</motion.p>
+        <motion.p variants={textVariants}>{t("ABOUT_ME_2")}</motion.p>
+        <motion.p variants={textVariants}>{t("ABOUT_ME_3")}</motion.p>
       </div>
       <motion.img variants={textVariants} src="cat.png" alt="ginger cat icon" />
     </motion.section>

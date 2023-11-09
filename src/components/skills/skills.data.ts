@@ -7,25 +7,25 @@ interface Domain {
 
 export const domains: Domain[] = [
   {
-    title: "Front-End",
+    title: "SKILL_1_TITLE",
     image: "frontend.png",
     imageAlt: "front-end icon",
     skills: ["React", "Angular", "VueJS", "SCSS", "Bootstrap"],
   },
   {
-    title: "Back-End",
+    title: "SKILL_2_TITLE",
     image: "backend.png",
     imageAlt: "back-end icon",
     skills: ["NodeJS", "ExpressJS", "Java", "TypeScript"],
   },
   {
-    title: "Bases de Données",
+    title: "SKILL_3_TITLE",
     image: "database.png",
     imageAlt: "database icon",
     skills: ["PostgreSQL", "MongoDB", "MySQL"],
   },
   {
-    title: "Outils",
+    title: "SKILL_4_TITLE",
     image: "tools.png",
     imageAlt: "tools icon",
     skills: ["Git", "Docker", "Figma", "Photoshop"],

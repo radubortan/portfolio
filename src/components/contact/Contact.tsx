@@ -4,8 +4,11 @@ import * as variants from "./contact.variants.ts";
 import PhoneSvg from "./phoneSvg/PhoneSvg.tsx";
 import ContactForm from "./contactForm/ContactForm.tsx";
 import useScreenSize from "../../hooks/useScreenSize.ts";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
   const isTablet = screenSize.width > 768 && screenSize.width <= 1024;
@@ -29,7 +32,7 @@ const Contact = () => {
               isMobileDevice || isTablet ? {} : variants.contactVariantsDesktop
             }
           >
-            Prenons contact
+            {t("LETS_GET_IN_TOUCH")}
           </motion.h1>
           <motion.div
             className={classes.item}
@@ -46,7 +49,7 @@ const Contact = () => {
               isMobileDevice || isTablet ? {} : variants.contactVariantsDesktop
             }
           >
-            <h2>Adresse</h2>
+            <h2>{t("ADDRESS")}</h2>
             <p>Montpellier, France</p>
           </motion.div>
           <motion.div

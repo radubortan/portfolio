@@ -1,18 +1,25 @@
 import classes from "./links.module.scss";
 import { motion } from "framer-motion";
 import * as variants from "./links.variants";
-
-const items: { id: string; title: string }[] = [
-  { id: "home", title: "Accueil" },
-  { id: "aboutMe", title: "A Propos De Moi" },
-  { id: "experience", title: "Expérience" },
-  { id: "projects", title: "Projets" },
-  { id: "skills", title: "Compétences" },
-  { id: "studies", title: "Etudes" },
-  { id: "contact", title: "Contact" },
-];
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 const Links = ({ onClick }: { onClick: () => void }) => {
+  const { t } = useTranslation();
+
+  const items = useMemo(
+    () => [
+      { id: "home", title: t("HOME") },
+      { id: "aboutMe", title: t("ABOUT_ME") },
+      { id: "experience", title: t("EXPERIENCE") },
+      { id: "projects", title: t("PROJECTS") },
+      { id: "skills", title: t("SKILLS") },
+      { id: "studies", title: t("STUDIES") },
+      { id: "contact", title: t("CONTACT") },
+    ],
+    []
+  );
+
   return (
     <motion.div className={classes.links} variants={variants.wrapperVariants}>
       {items.map((item) => {

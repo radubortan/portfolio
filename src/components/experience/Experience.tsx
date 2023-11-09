@@ -3,8 +3,11 @@ import classes from "./experience.module.scss";
 import { experiences } from "./experiences.data";
 import { motion, useScroll, useSpring } from "framer-motion";
 import ExperienceSection from "./experienceSection/ExperienceSection";
+import { useTranslation } from "react-i18next";
 
 const Experience = () => {
+  const { t } = useTranslation();
+
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -20,7 +23,7 @@ const Experience = () => {
   return (
     <div id="experience" className={classes.container} ref={ref}>
       <div className={classes.progress}>
-        <h1>Expérience</h1>
+        <h1>{t("EXPERIENCE")}</h1>
         <motion.div style={{ scaleX }} className={classes.progressBar} />
       </div>
 

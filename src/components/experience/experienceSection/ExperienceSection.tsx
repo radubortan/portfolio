@@ -3,8 +3,11 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { Experience } from "../experiences.data";
 import useScreenSize from "../../../hooks/useScreenSize";
+import { useTranslation } from "react-i18next";
 
 const ExperienceSection = ({ experience }: { experience: Experience }) => {
+  const { t } = useTranslation();
+
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -27,14 +30,14 @@ const ExperienceSection = ({ experience }: { experience: Experience }) => {
           style={{ y: isMobileDevice ? "" : y }}
         >
           <div className={classes.headers}>
-            <h2>{experience.title}</h2>
+            <h2>{t(experience.title)}</h2>
             <h3>{experience.company}</h3>
             <p>{experience.dates}</p>
           </div>
 
           <div className={classes.descriptions}>
-            <p>{experience.description}</p>
-            {experience.description2 && <p>{experience.description2}</p>}
+            <p>{t(experience.description)}</p>
+            {experience.description2 && <p>{t(experience.description2)}</p>}
           </div>
 
           <div className={classes.skills}>

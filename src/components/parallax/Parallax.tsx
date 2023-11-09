@@ -3,8 +3,11 @@ import classes from "./parallax.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 import useScreenSize from "../../hooks/useScreenSize";
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 
 const Parallax = ({ type }: { type: string }) => {
+  const { t } = useTranslation();
+
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -40,7 +43,7 @@ const Parallax = ({ type }: { type: string }) => {
       }}
     >
       <motion.h1 style={{ y: yText }}>
-        {type === "skills" ? "Compétences" : "Etudes"}
+        {type === "skills" ? t("SKILLS") : t("STUDIES")}
       </motion.h1>
       <motion.div className={classes.mountains} />
       <motion.div
