@@ -21,13 +21,11 @@
 
     @include mobile {
       flex-direction: column;
-      gap: 50px;
     }
 
     @include tablet {
       flex-direction: column;
       justify-content: center;
-      gap: clamp(40px, 5vh, 100px);
     }
 
     .textContainer {

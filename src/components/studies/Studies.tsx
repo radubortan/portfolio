@@ -32,57 +32,59 @@ const Studies = () => {
           <img src="polytech.png" alt="Polytech logo" />
         </motion.div>
 
-        <motion.div
-          variants={variants.textVariants}
-          initial={
-            isMobileDevice
-              ? { ...variants.textVariants.initial, x: -100 }
-              : isTablet
-              ? { ...variants.textVariants.initial, x: -200 }
-              : { ...variants.textVariants.initial, x: -400 }
-          }
-          whileInView="whileInView"
-          className={classes.headers}
-          viewport={{ once: showAnimationOnce }}
-        >
-          <h1>
-            <Trans i18nKey="ENGINEERING_DEGREE">
-              <span></span>
-            </Trans>
-          </h1>
-          <h2>Polytech Montpellier</h2>
-          <h3>2018 - 2023</h3>
-        </motion.div>
-
-        <div className={classes.divider}>
-          <motion.span
-            variants={
+        <div className={classes.mainContent}>
+          <motion.div
+            variants={variants.textVariants}
+            initial={
               isMobileDevice
-                ? variants.dividerVariantsMobile
-                : variants.dividerVariantsDesktop
+                ? { ...variants.textVariants.initial, x: -100 }
+                : isTablet
+                ? { ...variants.textVariants.initial, x: -200 }
+                : { ...variants.textVariants.initial, x: -400 }
             }
-            initial="initial"
+            whileInView="whileInView"
+            className={classes.headers}
+            viewport={{ once: showAnimationOnce }}
+          >
+            <h1>
+              <Trans i18nKey="ENGINEERING_DEGREE">
+                <span></span>
+              </Trans>
+            </h1>
+            <h2>Polytech Montpellier</h2>
+            <h3>2018 - 2023</h3>
+          </motion.div>
+
+          <div className={classes.divider}>
+            <motion.span
+              variants={
+                isMobileDevice
+                  ? variants.dividerVariantsMobile
+                  : variants.dividerVariantsDesktop
+              }
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: showAnimationOnce }}
+            />
+          </div>
+
+          <motion.div
+            className={classes.text}
+            variants={variants.textVariants}
+            initial={
+              isMobileDevice
+                ? { ...variants.textVariants.initial, x: 100 }
+                : isTablet
+                ? { ...variants.textVariants.initial, x: 200 }
+                : { ...variants.textVariants.initial, x: 400 }
+            }
             whileInView="whileInView"
             viewport={{ once: showAnimationOnce }}
-          />
+          >
+            <p>{t("STUDIES_1")}</p>
+            <p>{t("STUDIES_2")}</p>
+          </motion.div>
         </div>
-
-        <motion.div
-          className={classes.text}
-          variants={variants.textVariants}
-          initial={
-            isMobileDevice
-              ? { ...variants.textVariants.initial, x: 100 }
-              : isTablet
-              ? { ...variants.textVariants.initial, x: 200 }
-              : { ...variants.textVariants.initial, x: 400 }
-          }
-          whileInView="whileInView"
-          viewport={{ once: showAnimationOnce }}
-        >
-          <p>{t("STUDIES_1")}</p>
-          <p>{t("STUDIES_2")}</p>
-        </motion.div>
 
         <motion.a
           whileTap="whileTap"

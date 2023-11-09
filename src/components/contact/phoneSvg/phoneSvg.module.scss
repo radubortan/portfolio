@@ -3,8 +3,11 @@
 .phoneSvg {
   stroke: var(--orange);
   position: absolute;
-  margin: auto;
   z-index: -1;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
   @include short_or_mobile {
     display: none;
@@ -16,5 +19,6 @@
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
+    height: 100%;
   }
 }

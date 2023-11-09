@@ -10,10 +10,11 @@
   align-items: center;
 
   @include mobile {
-    height: 500px;
+    height: auto;
   }
 
   @include short {
+    height: auto;
     padding: var(--side-padding);
   }
 
