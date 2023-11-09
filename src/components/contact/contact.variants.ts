@@ -1,6 +1,6 @@
 export const contactVariantsDesktop = {
   initial: {
-    x: -500,
+    x: -300,
     opacity: 0,
   },
   animate: {
