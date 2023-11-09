@@ -13,6 +13,10 @@
     height: 500px;
   }
 
+  @include short {
+    padding: var(--side-padding);
+  }
+
   .textWrapper {
     width: 100%;
     position: relative;
@@ -67,7 +71,7 @@
     img {
       width: 50px;
 
-      @include mobile {
+      @include short_or_mobile {
         display: none;
       }
     }

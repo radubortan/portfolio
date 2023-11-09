@@ -110,6 +110,18 @@ button {
   }
 }
 
+@mixin short {
+  @media (max-height: 730px) {
+    @content;
+  }
+}
+
+@mixin short_or_mobile {
+  @media (max-height: 730px) or (max-width: 768px) {
+    @content;
+  }
+}
+
 @media (max-width: 1024px) and (min-width: 769px) {
   :root {
     --extra-small-text: 0.85rem;
@@ -143,5 +155,17 @@ button {
     --big-text: 1.5rem;
     --extra-big-text: 2rem;
     --ultra-big-text: 3rem;
+  }
+}
+
+@media (max-height: 730px) {
+  html {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+
+  section {
+    height: auto;
+    scroll-snap-align: none;
   }
 }

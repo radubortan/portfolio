@@ -10,6 +10,9 @@ const Studies = () => {
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
   const isTablet = screenSize.width > 768 && screenSize.width <= 1024;
+  const isShortDevice = screenSize.height <= 730;
+
+  const showAnimationOnce = isMobileDevice || isShortDevice;
 
   return (
     <section className={classes.container}>
@@ -24,7 +27,7 @@ const Studies = () => {
           }
           variants={variants.schoolVariants}
           transition={{ opacity: { duration: 1 } }}
-          viewport={{ once: isMobileDevice }}
+          viewport={{ once: showAnimationOnce }}
         >
           <img src="polytech.png" alt="Polytech logo" />
         </motion.div>
@@ -40,7 +43,7 @@ const Studies = () => {
           }
           whileInView="whileInView"
           className={classes.headers}
-          viewport={{ once: isMobileDevice }}
+          viewport={{ once: showAnimationOnce }}
         >
           <h1>
             <Trans i18nKey="ENGINEERING_DEGREE">
@@ -60,7 +63,7 @@ const Studies = () => {
             }
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: isMobileDevice }}
+            viewport={{ once: showAnimationOnce }}
           />
         </div>
 
@@ -75,7 +78,7 @@ const Studies = () => {
               : { ...variants.textVariants.initial, x: 400 }
           }
           whileInView="whileInView"
-          viewport={{ once: isMobileDevice }}
+          viewport={{ once: showAnimationOnce }}
         >
           <p>{t("STUDIES_1")}</p>
           <p>{t("STUDIES_2")}</p>
@@ -94,7 +97,7 @@ const Studies = () => {
           transition={{ scale: { duration: 0.2 }, opacity: { duration: 1 } }}
           href="https://www.polytech.umontpellier.fr/formation/cycle-ingenieur/informatique-et-gestion"
           target="_blank"
-          viewport={{ once: isMobileDevice }}
+          viewport={{ once: showAnimationOnce }}
         >
           {t("SCHOOL_WEBSITE")}
         </motion.a>

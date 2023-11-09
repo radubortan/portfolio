@@ -11,6 +11,11 @@
     background-color: var(--medium-blue);
   }
 
+  @include short {
+    background-color: var(--medium-blue);
+    padding: var(--side-padding);
+  }
+
   .content {
     max-width: var(--desktop-max-width);
     position: relative;

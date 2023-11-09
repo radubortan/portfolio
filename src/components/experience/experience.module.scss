@@ -20,7 +20,7 @@
     font-size: var(--big-text);
     color: var(--orange);
 
-    @include mobile {
+    @include short_or_mobile {
       position: relative;
       padding-top: var(--side-padding);
     }
@@ -29,13 +29,13 @@
       height: 10px;
       background-color: var(--white);
 
-      @include mobile {
+      @include short_or_mobile {
         display: none;
       }
     }
   }
 
-  @include mobile {
+  @include short_or_mobile {
     .experiences {
       display: flex;
       flex-direction: column;

@@ -5,7 +5,7 @@
   background: var(--dark-medium-gradient);
   justify-content: center;
 
-  @include mobile {
+  @include short_or_mobile {
     padding: var(--side-padding);
   }
 
@@ -29,6 +29,7 @@
         font-weight: 400;
         user-select: none;
         line-height: 1.2;
+        text-align: center;
 
         @include mobile {
           font-size: var(--ultra-big-text);

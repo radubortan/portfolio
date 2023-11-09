@@ -21,6 +21,7 @@ const AboutMe = () => {
 
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
+  const isShortDevice = screenSize.height <= 730;
 
   return (
     <motion.section
@@ -30,7 +31,7 @@ const AboutMe = () => {
       className={classes.container}
       viewport={{
         margin: !isMobileDevice ? "-100px" : "",
-        once: isMobileDevice,
+        once: isMobileDevice || isShortDevice,
       }}
       id="aboutMe"
     >

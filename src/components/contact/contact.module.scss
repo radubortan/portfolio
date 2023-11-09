@@ -5,7 +5,9 @@
   align-items: center;
   justify-content: center;
 
-  @include mobile {
+  @include short_or_mobile {
+    padding-top: var(--side-padding);
+    padding-bottom: var(--side-padding);
     background-color: var(--dark-blue);
   }
 

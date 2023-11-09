@@ -19,6 +19,7 @@ const ContactForm = () => {
 
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
+  const isShortDevice = screenSize.height <= 730;
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -56,7 +57,7 @@ const ContactForm = () => {
         ref={formRef}
         onSubmit={sendEmail}
         autoComplete="off"
-        variants={isMobileDevice ? {} : variants.formVariants}
+        variants={isMobileDevice || isShortDevice ? {} : variants.formVariants}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}

@@ -18,6 +18,7 @@ const ExperienceSection = ({ experience }: { experience: Experience }) => {
 
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
+  const isShortDevice = screenSize.height <= 730;
 
   return (
     <section key={experience.id} className={classes.container}>
@@ -27,7 +28,7 @@ const ExperienceSection = ({ experience }: { experience: Experience }) => {
         </div>
         <motion.div
           className={classes.textContainer}
-          style={{ y: isMobileDevice ? "" : y }}
+          style={{ y: isMobileDevice || isShortDevice ? "" : y }}
         >
           <div className={classes.headers}>
             <h2>{t(experience.title)}</h2>
