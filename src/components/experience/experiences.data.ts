@@ -13,7 +13,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: 1,
-    title: "Software Engineer Assistant",
+    title: "EXPERIENCE_1_TITLE",
     company: "Teads",
     image: "teads.jpg",
     imageAlt: "Teads' office",
