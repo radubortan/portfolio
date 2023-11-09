@@ -24,9 +24,4 @@ i18n
     },
   });
 
-const storedLanguage = localStorage.getItem("language");
-if (storedLanguage) {
-  i18n.changeLanguage(storedLanguage);
-}
-
 export default i18n;
