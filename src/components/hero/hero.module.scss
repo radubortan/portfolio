@@ -9,13 +9,13 @@
   flex-direction: column;
   align-items: center;
 
-  @include mobile {
-    height: auto;
-  }
-
   @include short {
     height: auto;
     padding: var(--side-padding);
+  }
+
+  @include mobile {
+    height: 500px;
   }
 
   .textWrapper {
