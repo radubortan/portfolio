@@ -106,10 +106,6 @@
       align-items: center;
       gap: 20px;
 
-      @include short_or_mobile {
-        margin-bottom: 10px;
-      }
-
       img {
         height: 50px;
       }
@@ -123,10 +119,6 @@
       cursor: pointer;
       user-select: none;
       font-weight: 500;
-
-      @include short_or_mobile {
-        margin-top: 10px;
-      }
     }
   }
 }
