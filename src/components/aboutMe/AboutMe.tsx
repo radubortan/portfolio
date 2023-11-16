@@ -21,7 +21,7 @@ const AboutMe = () => {
 
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
-  const isShortDevice = screenSize.height <= 730;
+  const isShortDevice = screenSize.height <= 700;
 
   return (
     <motion.section

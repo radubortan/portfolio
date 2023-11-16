@@ -83,13 +83,13 @@ button {
 }
 
 @mixin short {
-  @media (max-height: 730px) {
+  @media (max-height: 700px) {
     @content;
   }
 }
 
 @mixin short_or_mobile {
-  @media (max-height: 730px) or (max-width: 768px) {
+  @media (max-height: 700px) or (max-width: 768px) {
     @content;
   }
 }
@@ -130,7 +130,7 @@ button {
   }
 }
 
-@media (max-height: 730px) {
+@media (max-height: 700px) {
   html {
     scroll-snap-type: none;
     scroll-behavior: auto;

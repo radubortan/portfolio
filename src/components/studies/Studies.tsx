@@ -10,7 +10,7 @@ const Studies = () => {
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
   const isTablet = screenSize.width > 768 && screenSize.width <= 1024;
-  const isShortDevice = screenSize.height <= 730;
+  const isShortDevice = screenSize.height <= 700;
 
   const showAnimationOnce = isMobileDevice || isShortDevice;
 

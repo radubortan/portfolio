@@ -18,7 +18,7 @@ const ExperienceSection = ({ experience }: { experience: Experience }) => {
 
   const screenSize = useScreenSize();
   const isMobileDevice = screenSize.width <= 768;
-  const isShortDevice = screenSize.height <= 730;
+  const isShortDevice = screenSize.height <= 700;
 
   return (
     <section key={experience.id} className={classes.container}>
